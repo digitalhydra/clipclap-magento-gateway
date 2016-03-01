@@ -13,7 +13,7 @@ use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
  */
 final class ConfigProvider implements ConfigProviderInterface
 {
-    const CODE = 'sample_gateway';
+    const CODE = 'clipclap_gateway';
 
     /**
      * Retrieve assoc array of checkout configuration

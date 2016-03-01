@@ -9,7 +9,7 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="sample_gateway_config_provider" xsi:type="object">Magento\ClipClapGateway\Model\Ui\ConfigProvider</item>
+                <item name="clipclap_gateway_config_provider" xsi:type="object">Magento\ClipClapGateway\Model\Ui\ConfigProvider</item>
             </argument>
         </arguments>
     </type>

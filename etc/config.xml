@@ -8,7 +8,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <sample_gateway>
+            <clipclap_gateway>
                 <debug>1</debug>
                 <active>0</active>
                 <model>ClipClapGatewayFacade</model>
@@ -26,7 +26,7 @@
                 <debugReplaceKeys>MERCHANT_KEY</debugReplaceKeys>
                 <paymentInfoKeys>FRAUD_MSG_LIST</paymentInfoKeys>
                 <privateInfoKeys>FRAUD_MSG_LIST</privateInfoKeys>
-            </sample_gateway>
+            </clipclap_gateway>
         </payment>
     </default>
 </config>

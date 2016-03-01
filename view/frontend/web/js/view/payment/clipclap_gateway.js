@@ -16,8 +16,8 @@ define(
         'use strict';
         rendererList.push(
             {
-                type: 'sample_gateway',
-                component: 'Magento_ClipClapGateway/js/view/payment/method-renderer/sample_gateway'
+                type: 'clipclap_gateway',
+                component: 'Magento_ClipClapGateway/js/view/payment/method-renderer/clipclap_gateway'
             }
         );
         /** Add view logic here if needed */
