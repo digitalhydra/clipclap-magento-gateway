@@ -3,13 +3,13 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\SamplePaymentGateway\Test\Unit\Gateway\Request;
+namespace Magento\ClipClapGateway\Test\Unit\Gateway\Request;
 
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Model\InfoInterface;
 use Magento\Sales\Model\Order\Payment;
-use Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock;
-use Magento\SamplePaymentGateway\Gateway\Request\MockDataRequest;
+use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
+use Magento\ClipClapGateway\Gateway\Request\MockDataRequest;
 
 class MockDataRequestTest extends \PHPUnit_Framework_TestCase
 {

@@ -3,11 +3,11 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\SamplePaymentGateway\Test\Unit\Gateway\Response;
+namespace Magento\ClipClapGateway\Test\Unit\Gateway\Response;
 
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Sales\Model\Order\Payment;
-use Magento\SamplePaymentGateway\Gateway\Response\FraudHandler;
+use Magento\ClipClapGateway\Gateway\Response\FraudHandler;
 
 class FraudHandlerTest extends \PHPUnit_Framework_TestCase
 {

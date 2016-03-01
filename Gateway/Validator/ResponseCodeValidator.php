@@ -3,11 +3,11 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\SamplePaymentGateway\Gateway\Validator;
+namespace Magento\ClipClapGateway\Gateway\Validator;
 
 use Magento\Payment\Gateway\Validator\AbstractValidator;
 use Magento\Payment\Gateway\Validator\ResultInterface;
-use Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock;
+use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
 
 class ResponseCodeValidator extends AbstractValidator
 {

@@ -3,11 +3,11 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\SamplePaymentGateway\Gateway\Request;
+namespace Magento\ClipClapGateway\Gateway\Request;
 
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Gateway\Request\BuilderInterface;
-use Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock;
+use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
 
 class MockDataRequest implements BuilderInterface
 {

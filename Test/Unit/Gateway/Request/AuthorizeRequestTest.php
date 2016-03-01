@@ -3,13 +3,13 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Magento\SamplePaymentGateway\Test\Unit\Gateway\Request;
+namespace Magento\ClipClapGateway\Test\Unit\Gateway\Request;
 
 use Magento\Payment\Gateway\ConfigInterface;
 use Magento\Payment\Gateway\Data\AddressAdapterInterface;
 use Magento\Payment\Gateway\Data\OrderAdapterInterface;
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
-use Magento\SamplePaymentGateway\Gateway\Request\AuthorizationRequest;
+use Magento\ClipClapGateway\Gateway\Request\AuthorizationRequest;
 
 class AuthorizeRequestTest extends \PHPUnit_Framework_TestCase
 {
