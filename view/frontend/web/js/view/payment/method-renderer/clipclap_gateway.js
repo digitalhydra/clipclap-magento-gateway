@@ -3,7 +3,6 @@
  * See COPYING.txt for license details.
  */
 /*browser:true*/
-/*global define*/
 var _$clipclap = _$clipclap || {};
 _$clipclap._setKey = 'Vc7Jhi1v0DC9Tq0n6Ln5';
 _$clipclap._themeButton = "blue";
@@ -16,6 +15,13 @@ _$clipclap._Buttons = {
         'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
     }
 };
+(function() {
+console.log('call-button');
+    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
+    cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+})();
+/*global define*/
 define(
     [
         'Magento_Checkout/js/view/payment/default'
@@ -32,12 +38,7 @@ define(
 
             initObservable: function () {
                 // console.log('init');
-                (function() {
-                console.log('call-button');
-                    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-                    cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
-                })();
+                
                 this._super()
                     .observe([
                         'transactionResult'
