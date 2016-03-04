@@ -10,9 +10,19 @@ define(
     ],
     function (Component) {
         'use strict';
-
+        console.log('comp')
         var _$clipclap = _$clipclap || {};
-
+        _$clipclap._setKey = 'Vc7Jhi1v0DC9Tq0n6Ln5';
+        _$clipclap._themeButton = "blue";
+        _$clipclap._Buttons = {
+            "#botonClipClap":{
+                'paymentRef': 'ref0000001',
+                'netValue': '13000',
+                'taxValue': '1000',
+                'tipValue': '500',
+                'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
+            }
+        };
         return Component.extend({
             defaults: {
                 template: 'Magento_ClipClapGateway/payment/form',
