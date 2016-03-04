@@ -11,6 +11,8 @@ define(
     function (Component) {
         'use strict';
 
+        var _$clipclap = _$clipclap || {};
+        
         return Component.extend({
             defaults: {
                 template: 'Magento_ClipClapGateway/payment/form',
@@ -18,6 +20,7 @@ define(
             },
 
             initObservable: function () {
+                console.log('init')
 
                 this._super()
                     .observe([
@@ -48,6 +51,7 @@ define(
             },
 
             getData: function() {
+                console.log('getData')
                 return {
                     'method': this.item.method,
                     'additional_data': {
@@ -57,6 +61,7 @@ define(
             },
 
             getTransactionResults: function() {
+                console.log('result')
                 return _.map(window.checkoutConfig.payment.clipclap_gateway.transactionResults, function(value, key) {
                     return {
                         'value': key,
