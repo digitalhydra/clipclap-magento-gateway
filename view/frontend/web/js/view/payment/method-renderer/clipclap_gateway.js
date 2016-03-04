@@ -12,7 +12,7 @@ define(
         'use strict';
 
         var _$clipclap = _$clipclap || {};
-        
+
         return Component.extend({
             defaults: {
                 template: 'Magento_ClipClapGateway/payment/form',
@@ -20,7 +20,7 @@ define(
             },
 
             initObservable: function () {
-                console.log('init')
+                // console.log('init');
                 (function() {
                 console.log('call-button');
                     var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
