@@ -58,6 +58,8 @@ define(
 var $j = jQuery.noConflict(); 
 
 $j(document).ready(function(){
+console.log('set button')
+
     var _$clipclap = _$clipclap || {};
     _$clipclap._setKey = 'Vc7Jhi1v0DC9Tq0n6Ln5';
     _$clipclap._themeButton = "blue";
