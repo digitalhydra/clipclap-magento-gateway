@@ -11,11 +11,11 @@ _$clipclap._themeButton = "blue";
 _$clipclap._debugButton = true;
 _$clipclap._Buttons = {
     "#botonClipClap":{
-        'paymentRef': 'ref0000001',
+        'paymentRef': 'Order 456787865',
         'netValue': '13000',
         'taxValue': '1000',
         'tipValue': '500',
-        'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
+        'description': 'Compra de pruebas magento'
     }
 };
 /*global define*/
@@ -35,12 +35,9 @@ define(
 
             initObservable: function () {
                 
-(function() {
-console.log('call-button');
-    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-    cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
-})();
+                var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+
                 this._super()
                     .observe([
                         'transactionResult'
