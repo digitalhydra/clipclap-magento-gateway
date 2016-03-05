@@ -8,6 +8,7 @@ var _$clipclap = _$clipclap || {};
 console.log('clipclap_defined');
 _$clipclap._setKey = 'Vc7Jhi1v0DC9Tq0n6Ln5';
 _$clipclap._themeButton = "blue";
+_$clipclap._debugButton = true;
 _$clipclap._Buttons = {
     "#botonClipClap":{
         'paymentRef': 'ref0000001',
