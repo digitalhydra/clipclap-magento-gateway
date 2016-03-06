@@ -18,8 +18,7 @@ define(
         return Component.extend({
             defaults: {
                 template: 'Magento_ClipClapGateway/payment/form',
-                transactionResult: '',
-                clipclap: _$clipclap
+                transactionResult: ''
             },
 
             initObservable: function () {
