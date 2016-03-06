@@ -14,7 +14,6 @@ define(
         'use strict';
         // console.log('comp')
         
-        
         return Component.extend({
             defaults: {
                 template: 'Magento_ClipClapGateway/payment/form',
