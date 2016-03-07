@@ -21,15 +21,15 @@ define(
             },
 
             initObservable: function () {
-                // (function(){
-                //     console.log('call button file')
-                // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
-
-                // })()
-                console.log('call button file')
+                (function(){
+                    console.log('call button file')
                 var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+
+                })()
+                // console.log('call button file')
+                // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
 
                 this._super()
                     .observe([
