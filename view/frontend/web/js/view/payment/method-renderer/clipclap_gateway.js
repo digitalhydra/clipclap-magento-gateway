@@ -21,11 +21,13 @@ define(
             },
 
             initObservable: function () {
+                console.log('initObservable');
                 // (function(){
-                //     console.log('call button file')
-                // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                // // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
-                // document.body.appendChild(cc);
+                    console.log('call button file');
+                    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
+                    cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                    var s = document.getElementsByTagName('script')[0]; 
+                    s.parentNode.insertBefore(cc, s);
 
                 // })()
                 // console.log('call button file')
@@ -44,11 +46,12 @@ define(
             },
 
             getCode: function() {
-                
+                console.log('getCode');
                 return 'clipclap_gateway';
             },
 
             getData: function() {
+                console.log('getData');
                 return {
                     'method': this.item.method,
                     'additional_data': {
@@ -58,6 +61,7 @@ define(
             },
 
             getTransactionResults: function() {
+                console.log('getTransactionResults');
                 return _.map(window.checkoutConfig.payment.clipclap_gateway.transactionResults, function(value, key) {
                     return {
                         'value': key,
