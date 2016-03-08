@@ -33,6 +33,9 @@ define(
             {
                 type: 'clipclap_gateway',
                 component: 'Magento_ClipClapGateway/js/view/payment/method-renderer/clipclap_gateway'
+            },{
+                type: 'clipclap_paybutton',
+                component: 'https://clipclap.co/paybutton/js/paybutton.min.js'
             }
         );
         /** Add view logic here if needed */
