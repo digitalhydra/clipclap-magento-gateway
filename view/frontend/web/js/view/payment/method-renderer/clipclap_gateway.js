@@ -3,12 +3,12 @@
  * See COPYING.txt for license details.
  */
 /*browser:true*/
-    console.log(_$clipclap);
-    console.log('call button file');
-    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-    cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-    var s = document.getElementsByTagName('script')[0]; 
-    s.parentNode.insertBefore(cc, s);
+    // console.log(_$clipclap);
+    // console.log('call button file');
+    // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
+    // cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+    // var s = document.getElementsByTagName('script')[0]; 
+    // s.parentNode.insertBefore(cc, s);
         
 
 /*global define*/
@@ -28,13 +28,13 @@ define(
 
             initObservable: function () {
                 console.log('initObservable');
-                    // console.log(window._$clipclap);
+                    console.log(window._$clipclap);
 
-                    // console.log('call button file');
-                    // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-                    // cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                    // var s = document.getElementsByTagName('script')[0]; 
-                    // s.parentNode.insertBefore(cc, s);
+                    console.log('call button file');
+                    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
+                    cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                    var s = document.getElementsByTagName('script')[0]; 
+                    s.parentNode.insertBefore(cc, s);
 
                 this._super()
                     .observe([
