@@ -4,8 +4,8 @@
  */
 /*browser:true*/
 (function(){
-    console.log(window._$clipclap);
-    // console.log('call button file');
+    console.log(_$clipclap);
+    console.log('call button file');
     var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
     cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
     var s = document.getElementsByTagName('script')[0]; 
