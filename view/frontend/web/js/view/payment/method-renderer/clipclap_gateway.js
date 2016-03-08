@@ -22,7 +22,7 @@ define(
 
             initObservable: function () {
                 console.log('initObservable');
-                    console.log(window._$clipclap);
+                    // console.log(window._$clipclap);
 
                     // console.log('call button file');
                     // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
