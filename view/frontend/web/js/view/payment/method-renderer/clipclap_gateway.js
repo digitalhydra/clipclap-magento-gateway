@@ -31,12 +31,12 @@ define(
                     console.log(window._$clipclap);
 
                     console.log('call button file');
-                    //   var script = document.createElement('script');
-                      var src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                      // script.async = false;
-                      // document.head.appendChild(script);
-
-                    document.write('<script src="' + src + '" async></'+'script>');
+                    (function(d, t) {
+                        var g = d.createElement(t),
+                            s = d.getElementsByTagName(t)[0];
+                        g.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                        s.parentNode.insertBefore(g, s);
+                    }(document, 'script'));
                 this._super()
                     .observe([
                         'transactionResult'
