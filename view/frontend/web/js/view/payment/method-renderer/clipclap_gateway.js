@@ -32,7 +32,7 @@ define(
 
                     console.log('call button file');
                     //   var script = document.createElement('script');
-                      src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                      var src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
                       // script.async = false;
                       // document.head.appendChild(script);
 
