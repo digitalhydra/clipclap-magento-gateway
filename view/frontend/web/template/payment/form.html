@@ -5,7 +5,7 @@
  * See COPYING.txt for license details.
  */
 -->
-// @codingStandardsIgnoreFile
+
 
 ?>
 <div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
@@ -64,15 +64,15 @@
 </div>
 <!-- BEGIN clipclap CODE -->
 
-<script>
-//<![CDATA[
-    (function(){
-        console.log('call button file')
-    var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
-    // document.body.appendChild(cc);
-
-    })()
-//]]>
+  <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_ClipClapGateway/js/view/payment/clipclap_gateway": {
+                    "merchant_gateway_key": <?php /* @escapeNotVerified */ echo json_encode($values); ?>,
+                    "debug":  <?php echo (int)(!$block->getReadOnly() && !$block->canManageOptionDefaultOnly()) ?>,
+                    "isReadOnly": <?php echo (int)$block->getReadOnly(); ?>
+                }
+            }
+        }
 </script>
 <!-- END clipclap CODE -->

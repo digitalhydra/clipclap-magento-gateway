@@ -7,11 +7,11 @@
 require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
     function (paybutton) { 
 
-        console.log('load paybutton con requirejs'); 
-        console.log(window._$clipclap);
+        console.log('load paybutton con requirejs y re emite window.load'); 
         var evt = document.createEvent('Event');
         evt.initEvent('load',false,false);
         window.dispatchEvent(evt);
+        
     }
 );
 /*global define*/
@@ -31,7 +31,6 @@ define(
 
             initObservable: function () {
                 console.log('initObservable');
-                    console.log(window._$clipclap);
 
                 this._super()
                     .observe([
