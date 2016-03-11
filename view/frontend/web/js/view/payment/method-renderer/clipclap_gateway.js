@@ -9,7 +9,6 @@ require(['https://clipclap.co/paybutton/js/paybutton.min.js'],
 
         console.log('load paybutton con requirejs'); 
         console.log(window._$clipclap);
-
         
     }
 );
@@ -32,15 +31,6 @@ define(
                 console.log('initObservable');
                     console.log(window._$clipclap);
 
-                    console.log('call button file');
-                    //<![CDATA[
-                    // (function(d, t) {
-                    //     var g = d.createElement(t),
-                    //         s = d.getElementsByTagName(t)[0];
-                    //     g.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                    //     s.parentNode.insertBefore(g, s);
-                    // }(document, 'script'));
-                    //]]>
                 this._super()
                     .observe([
                         'transactionResult'
