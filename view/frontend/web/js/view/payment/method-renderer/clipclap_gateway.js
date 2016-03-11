@@ -10,7 +10,7 @@
     // var s = document.getElementsByTagName('script')[0]; 
     // s.parentNode.insertBefore(cc, s);
         
-require(['https://clipclap.co/paybutton/js/paybutton.min.js']);
+// require(['https://clipclap.co/paybutton/js/paybutton.min.js']);
 /*global define*/
 define(
     [
@@ -78,4 +78,7 @@ define(
         });
     }
 );
-    
+define(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
+        function (paybutton) {
+            console.log('load paybutton con requirejs');
+});
