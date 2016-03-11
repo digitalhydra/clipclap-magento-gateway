@@ -3,15 +3,27 @@
  * See COPYING.txt for license details.
  */
 /*browser:true*/
-    // console.log(_$clipclap);
-    // console.log('call button file');
-    // var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-    // cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-    // var s = document.getElementsByTagName('script')[0]; 
-    // s.parentNode.insertBefore(cc, s);
-        
-// require(['https://clipclap.co/paybutton/js/paybutton.min.js']);
 
+require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
+    function (paybutton) { 
+        console.log('load paybutton con requirejs'); 
+        
+        var _$clipclap = _$clipclap || {};
+        console.log('clipclap_define_var');
+        _$clipclap._setKey = 'Vc7Jhi1v0DC9Tq0n6Ln5';
+        _$clipclap._themeButton = "blue";
+        _$clipclap._debugButton = true;
+        _$clipclap._Buttons = {
+            "#botonClipClap":{
+                'paymentRef': 'Order 456787865',
+                'netValue': '13000',
+                'taxValue': '1000',
+                'tipValue': '500',
+                'description': 'Compra de pruebas magento'
+            }
+        };
+    }
+);
 /*global define*/
 define(
     [
