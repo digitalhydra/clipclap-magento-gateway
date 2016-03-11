@@ -6,7 +6,9 @@
 
 require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
     function (paybutton) { 
-        console.log('load paybutton con requirejs',paybutton); 
+
+        console.log('load paybutton con requirejs'); 
+        eval(paybutton);
         
     }
 );
