@@ -10,7 +10,7 @@
     // var s = document.getElementsByTagName('script')[0]; 
     // s.parentNode.insertBefore(cc, s);
         
-
+require(['https://clipclap.co/paybutton/js/paybutton.min.js']);
 /*global define*/
 define(
     [
@@ -31,12 +31,14 @@ define(
                     console.log(window._$clipclap);
 
                     console.log('call button file');
-                    (function(d, t) {
-                        var g = d.createElement(t),
-                            s = d.getElementsByTagName(t)[0];
-                        g.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-                        s.parentNode.insertBefore(g, s);
-                    }(document, 'script'));
+                    //<![CDATA[
+                    // (function(d, t) {
+                    //     var g = d.createElement(t),
+                    //         s = d.getElementsByTagName(t)[0];
+                    //     g.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+                    //     s.parentNode.insertBefore(g, s);
+                    // }(document, 'script'));
+                    //]]>
                 this._super()
                     .observe([
                         'transactionResult'
