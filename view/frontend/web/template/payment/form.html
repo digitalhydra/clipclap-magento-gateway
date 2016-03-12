@@ -68,9 +68,9 @@
         {
             "*": {
                 "Magento_ClipClapGateway/js/view/payment/clipclap_gateway": {
-                    "merchant_gateway_key": <?php /* @escapeNotVerified */ echo json_encode($values); ?>,
+                    "merchant_key": <?php /* @escapeNotVerified */ echo json_encode($values); ?>,
                     "debug":  <?php echo (int)(!$block->getReadOnly() && !$block->canManageOptionDefaultOnly()) ?>,
-                    "isReadOnly": <?php echo (int)$block->getReadOnly(); ?>
+                    "buton_type": <?php echo (int)$block->getReadOnly(); ?>
                 }
             }
         }
