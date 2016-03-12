@@ -15,6 +15,7 @@
                 <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <order_status>pending_payment</order_status>
                 <payment_action>authorize</payment_action>
+                <button_type>blue</button_type>
                 <title>ClipClap Gateway</title>
                 <currency>COP</currency>
                 <button_type>COP</button_type>
