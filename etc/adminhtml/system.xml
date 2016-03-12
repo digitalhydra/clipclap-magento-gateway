@@ -27,7 +27,7 @@
                 </field>
                 <field id="button_type" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Tema del boton</label>
-                    <source_model>Magento\ClipClapGateway\Model\Ui\ThemeButton</source_model>
+                    <source_model>Magento\ClipClapGateway\Model\Source\ThemeButton</source_model>
                 </field>
                 <field id="allowspecific" translate="label" type="allowspecific" sortOrder="130" showInDefault="9"
                        showInWebsite="1" showInStore="0">
