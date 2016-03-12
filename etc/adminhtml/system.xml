@@ -25,10 +25,6 @@
                     <label>Debug</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="button_type" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Tema del boton</label>
-                    <source_model>Magento\SamplePaymentGateway\Model\Adminhtml\Source\ThemeButton</source_model>
-                </field>
                 <field id="payment_action" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Payment Action</label>
                     <source_model>Magento\SamplePaymentGateway\Model\Adminhtml\Source\PaymentAction</source_model>

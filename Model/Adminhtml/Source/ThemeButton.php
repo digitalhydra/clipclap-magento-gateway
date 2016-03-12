@@ -7,7 +7,9 @@ namespace Magento\ClipClapGateway\Model\Adminhtml\Source;
 
 use Magento\Payment\Model\Method\AbstractMethod;
 
-
+/**
+ * Class ThemeButton
+ */
 class ThemeButton implements \Magento\Framework\Option\ArrayInterface
 {
     /**
