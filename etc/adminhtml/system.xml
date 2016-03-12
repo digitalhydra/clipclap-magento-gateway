@@ -17,17 +17,20 @@
                 <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Titulo</label>
                 </field>
-                <field id="merchant_gateway_key" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="merchant_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>API Key</label>
-                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
-                </field>
-                <field id="debug" translate="label" type="select" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Debug</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="button_type" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Tema del boton</label>
                     <source_model>Magento\ClipClapGateway\Model\Adminhtml\Source\ThemeButton</source_model>
+                </field>
+                <field id="iva_type" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Tipo de IVA</label>
+                    <source_model>Magento\ClipClapGateway\Model\Adminhtml\Source\IvaType</source_model>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="allowspecific" translate="label" type="allowspecific" sortOrder="130" showInDefault="9"
                        showInWebsite="1" showInStore="0">

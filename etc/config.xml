@@ -12,13 +12,12 @@
                 <debug>1</debug>
                 <active>0</active>
                 <model>ClipClapGatewayFacade</model>
-                <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <order_status>pending_payment</order_status>
                 <button_type>blue</button_type>
-                <title>ClipClap Gateway</title>
+                <title>Billetera ClipClap</title>
+                <merchant_key>ClipClap Key</merchant_key>
                 <currency>COP</currency>
-                <button_type>COP</button_type>
-                <can_authorize>1</can_authorize>
+                <iva_type>0</iva_type>
                 <can_capture>1</can_capture>
                 <can_void>1</can_void>
                 <can_use_checkout>1</can_use_checkout>
