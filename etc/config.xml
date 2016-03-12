@@ -12,7 +12,7 @@
                 <debug>1</debug>
                 <active>0</active>
                 <model>ClipClapGatewayFacade</model>
-                <merchant_gateway_key backend_model="\Magento\Framework\Data\Form\Element\Text" />
+                <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <order_status>pending_payment</order_status>
                 <payment_action>authorize</payment_action>
                 <title>ClipClap Gateway</title>
