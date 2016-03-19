@@ -7,7 +7,7 @@
 require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
     function (paybutton) { 
 
-        console.log('load paybutton con requirejs y re emite window.load'); 
+        console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
         var evt = document.createEvent('Event');
         evt.initEvent('load',false,false);
         window.dispatchEvent(evt);
