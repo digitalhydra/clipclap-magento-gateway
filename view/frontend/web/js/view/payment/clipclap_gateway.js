@@ -24,7 +24,9 @@ define(
         );
         /** Add view logic here if needed */
         
-        //console.log(config);
+        return function (config) {
+
+        console.log(config);
 
             console.log('clipclap_define_var');
             var _$clipclap = _$clipclap || {};
@@ -40,6 +42,8 @@ define(
                     'description': 'Compra de pruebas magento'
                 }
             };
-        return Component.extend({});
+        }
+
+        //Component.extend({});
     }
 );
