@@ -39,12 +39,10 @@ define(
         );
         /** Add view logic here if needed */
         
-        return function (config) {
+        // function (config) { console.log('config',config); }
 
-        console.log('config',config);
-
-        }
-
-        //Component.extend({});
+        //
+        return Component.extend({});
+        
     }
 );
