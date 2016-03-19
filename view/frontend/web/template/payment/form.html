@@ -67,10 +67,10 @@
   <script type="text/x-magento-init">
         {
             "*": {
-                "Magento_ClipClapGateway/js/view/payment/clipclap_gateway": {
-                    "merchant_key": <?php /* @escapeNotVerified */ echo json_encode($values); ?>,
-                    "debug":  <?php echo (int)(!$block->getReadOnly() && !$block->canManageOptionDefaultOnly()) ?>,
-                    "buton_type": <?php echo (int)$block->getReadOnly(); ?>
+                "Magento_ClipClapGateway/view/frontend/web/js/view/payment/clipclap_gateway": {
+                    "merchant_key": "<?php /* @escapeNotVerified */ echo 'keyfrom user' ?>",
+                    "iva":  "<?php /* @escapeNotVerified */ echo 'iva user' ?>",
+                    "buton_type": <?php echo 'boton tema' ?>
                 }
             }
         }
