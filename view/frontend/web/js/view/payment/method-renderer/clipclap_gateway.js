@@ -58,7 +58,18 @@ define(
                     }
                 };
             },
-
+            getMerchantKey: function () {
+                console.log('getMerchantKey');
+                return window.checkoutConfig.payment.clipclap_gateway.merchantKey;
+            },
+            getButtonTheme: function () {
+                console.log('getButtonTheme');
+                return window.checkoutConfig.payment.clipclap_gateway.buttonTheme;
+            },
+            getIvaTax: function () {
+                console.log('getIvaTax');
+                return window.checkoutConfig.payment.clipclap_gateway.ivaTax;
+            }
             getTransactionResults: function() {
                 console.log('getTransactionResults');
                 return _.map(window.checkoutConfig.payment.clipclap_gateway.transactionResults, function(value, key) {

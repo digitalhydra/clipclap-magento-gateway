@@ -19,6 +19,8 @@
         }
     };
 
+    console.log('transfer_options',window.checkoutConfig.payment);
+
 /*global define*/
 define(
     [
