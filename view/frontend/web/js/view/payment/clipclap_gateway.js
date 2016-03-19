@@ -24,8 +24,8 @@ define(
         );
         /** Add view logic here if needed */
         
-        console.log(config);
-        
+        //console.log(config);
+
             console.log('clipclap_define_var');
             var _$clipclap = _$clipclap || {};
             _$clipclap._setKey = 'Vc7Jhi1v0DC9Tq0n6Ln5';
