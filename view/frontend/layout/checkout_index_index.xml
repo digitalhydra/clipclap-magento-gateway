@@ -27,7 +27,7 @@
                                                                     <item name="component" xsi:type="string">Magento_ClipClapGateway/js/view/payment/clipclap_gateway</item>
                                                                     <item name="methods" xsi:type="array">
                                                                         <item name="clipclap_gateway" xsi:type="array">
-                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">false</item>
                                                                         </item>
                                                                     </item>
                                                                 </item>
