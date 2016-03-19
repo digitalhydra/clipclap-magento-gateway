@@ -69,7 +69,7 @@ define(
             getIvaTax: function () {
                 console.log('getIvaTax');
                 return window.checkoutConfig.payment.clipclap_gateway.ivaTax;
-            }
+            },
             getTransactionResults: function() {
                 console.log('getTransactionResults');
                 return _.map(window.checkoutConfig.payment.clipclap_gateway.transactionResults, function(value, key) {
