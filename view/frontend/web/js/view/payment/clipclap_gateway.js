@@ -19,7 +19,7 @@
         }
     };
 
-    console.log('transfer_options',window.checkoutConfig.payment);
+    console.log('transfer_options',window.checkoutConfig);
 
 /*global define*/
 define(
