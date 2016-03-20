@@ -15,13 +15,14 @@ class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
     
+
     /**
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
-
+    
     public function __construct(
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     ) {
         // parent::__construct( $scopeConfig );
         $this->scopeConfig = $scopeConfig;
