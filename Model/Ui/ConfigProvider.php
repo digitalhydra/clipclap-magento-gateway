@@ -17,6 +17,11 @@ class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
     
+    /**
+     * @var ScopeConfigInterface
+     */
+    protected $scopeConfig;
+    
     public function __construct(
         ScopeConfigInterface $scopeConfig,
     ) {
