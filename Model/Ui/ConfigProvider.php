@@ -20,15 +20,15 @@ final class ConfigProvider implements ConfigProviderInterface
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = array()
     ) {
-        parent::__construct(
-            $paymentData,
-            $scopeConfig,
-            $data
-        );
+        // parent::__construct(
+        //     $paymentData,
+        //     $scopeConfig,
+        //     $data
+        // );
  
         $this->_scopeConfig = $scopeConfig;
-        // $showTemplateHint =  $this->_scopeConfig->getValue('merchant_key', \Magento\ClipClapGateway\Model\ScopeInterface::SCOPE_STORE);
-        
+        $showTemplateHint =  $this->_scopeConfig->getValue('merchant_key');
+
         // $this->getConfigData('merchant_key')
     }
 
