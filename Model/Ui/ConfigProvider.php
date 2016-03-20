@@ -40,7 +40,7 @@ class ConfigProvider implements ConfigProviderInterface
  
         $this->_scopeConfig = $scopeConfig;
         // $this->_merchantKey =  $this->getConfigData('merchant_key');
-
+        $this->_merchantKey = $this->_scopeConfig->getValue('merchant_id');
         // $this->getConfigData('merchant_key')
     }
 
