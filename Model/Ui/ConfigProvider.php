@@ -27,7 +27,7 @@ final class ConfigProvider implements ConfigProviderInterface
         // );
  
         $this->_scopeConfig = $scopeConfig;
-        $showTemplateHint =  $this->_scopeConfig->getValue('merchant_key');
+        $this->_merchantKey =  $this->_scopeConfig->getValue('merchant_key');
 
         // $this->getConfigData('merchant_key')
     }
@@ -46,7 +46,7 @@ final class ConfigProvider implements ConfigProviderInterface
                         ClientMock::SUCCESS => __('Success'),
                         ClientMock::FAILURE => __('Fraud')
                     ],
-                    'merchantKey' => '',
+                    'merchantKey' =>  $this->_merchantKey,
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
                 ]
