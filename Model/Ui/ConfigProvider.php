@@ -7,13 +7,10 @@ namespace Magento\ClipClapGateway\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 // use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
-// use Magento\Checkout\Model\Session as CheckoutSession;
-
 
 /**
  * Class ConfigProvider
  */
-
 
 use Magento\Checkout\Helper\Data as CheckoutHelper;
 use Magento\Checkout\Model\Session as CheckoutSession;
