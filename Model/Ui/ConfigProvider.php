@@ -15,6 +15,22 @@ final class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
 
+    public function __construct(
+        \Magento\Framework\Model\Context $context,
+        \Magento\Payment\Helper\Data $paymentData,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+        array $data = array()
+    ) {
+        parent::__construct(
+            $context,
+            $paymentData,
+            $scopeConfig,
+            $data
+        );
+ 
+        $this->_merchantkey = $this->getConfigData('merchant_key');
+    }
+
     /**
      * Retrieve assoc array of checkout configuration
      *
@@ -29,9 +45,9 @@ final class ConfigProvider implements ConfigProviderInterface
                         ClientMock::SUCCESS => __('Success'),
                         ClientMock::FAILURE => __('Fraud')
                     ],
-                    'merchantKey' => $this->getConfigData('merchant_key'),
-                    'buttonTheme' => $this->getConfigData('button_type'),
-                    'ivaTax' => $this->getConfigData('iva_type'),
+                    'merchantKey' => 'some_key',
+                    'buttonTheme' => 'el azul',
+                    'ivaTax' => 'el iva',
                 ]
             ]
         ];
