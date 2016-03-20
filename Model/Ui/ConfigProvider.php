@@ -8,9 +8,9 @@ namespace Magento\ClipClapGateway\Model\Ui;
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
 
-use Magento\Quote\Api\Data\CartInterface;
-use Magento\Payment\Model\Method\AbstractMethod;
-use Magento\Sales\Model\Order;
+// use Magento\Quote\Api\Data\CartInterface;
+// use Magento\Payment\Model\Method\AbstractMethod;
+// use Magento\Sales\Model\Order;
 
 /**
  * Class ConfigProvider
@@ -30,13 +30,13 @@ class ConfigProvider implements ConfigProviderInterface
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = array()
     ) {
-        parent::__construct($context,
-            $registry,
-            $extensionFactory,
-            $customAttributeFactory,
-            $paymentData,
-            $scopeConfig,
-            $data);
+        // parent::__construct($context,
+        //     $registry,
+        //     $extensionFactory,
+        //     $customAttributeFactory,
+        //     $paymentData,
+        //     $scopeConfig,
+        //     $data);
  
         $this->_scopeConfig = $scopeConfig;
         // $this->_merchantKey =  $this->getConfigData('merchant_key');
