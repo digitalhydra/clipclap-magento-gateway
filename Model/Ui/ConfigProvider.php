@@ -17,14 +17,6 @@ class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
     
-
-    /**
-     * @param ConfigFactory $configFactory
-     * @param ResolverInterface $localeResolver
-     * @param CurrentCustomer $currentCustomer
-     * @param PaypalHelper $paypalHelper
-     * @param PaymentHelper $paymentHelper
-     */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
     ) {
@@ -52,8 +44,7 @@ class ConfigProvider implements ConfigProviderInterface
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
                 ]
-            ],
-            'config'=>$this->scopeConfig
+            ]
         ];
     }
 }
