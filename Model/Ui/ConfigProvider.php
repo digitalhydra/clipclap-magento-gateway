@@ -38,7 +38,7 @@ class ConfigProvider implements AbstractMethod
             $data);
  
         $this->_scopeConfig = $scopeConfig;
-        $this->_merchantKey =  $this->getConfigData('merchant_key');
+        // $this->_merchantKey =  $this->getConfigData('merchant_key');
 
         // $this->getConfigData('merchant_key')
     }
