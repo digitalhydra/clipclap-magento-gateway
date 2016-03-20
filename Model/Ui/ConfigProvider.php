@@ -15,19 +15,19 @@ final class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
 
-    // public function __construct(
-    //     \Magento\Payment\Helper\Data $paymentData,
-    //     \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-    //     array $data = array()
-    // ) {
+    public function __construct(
+        \Magento\Payment\Helper\Data $paymentData,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        array $data = array()
+    ) {
     //     parent::__construct(
     //         $paymentData,
     //         $scopeConfig,
     //         $data
     //     );
  
-    //     $this->_scopeConfig = $scopeConfig;
-    // }
+        $this->_scopeConfig = $scopeConfig;
+    }
 
     /**
      * Retrieve assoc array of checkout configuration
