@@ -8,6 +8,7 @@ namespace Magento\ClipClapGateway\Model\Ui;
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
 use Magento\Checkout\Model\Session as CheckoutSession;
+use Magento\Customer\Model\Session as CustomerSession;
 
 
 /**
@@ -23,6 +24,7 @@ class ConfigProvider implements ConfigProviderInterface
      */
     private $checkoutSession;
 
+    private $customerSession;
     /**
      * @var \Magento\Quote\Api\PaymentMethodManagementInterface
      */
@@ -30,11 +32,11 @@ class ConfigProvider implements ConfigProviderInterface
 
     public function __construct(
         CheckoutSession $checkoutSession,
+        CustomerSession $customerSession,
         \Magento\Quote\Api\PaymentMethodManagementInterface $paymentMethodManagement,
         array $data = array()
     ) {
         
-        $quoteId = $this->checkoutSession->getQuote()->getId();
         // parent::__construct($context,
         //     $registry,
         //     $extensionFactory,
@@ -48,6 +50,8 @@ class ConfigProvider implements ConfigProviderInterface
         // $this->_merchantKey = $this->_scopeConfig->getValue('merchant_id');
         // $this->getConfigData('merchant_key')
         $this->checkoutSession = $checkoutSession;
+        $this->customerSession = $customerSession;
+        $quoteId = $this->checkoutSession->getQuote()->getId();
         $this->paymentMethodManagement = $paymentMethodManagement;
     }
 
