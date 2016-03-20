@@ -27,7 +27,7 @@ class ConfigProvider implements ConfigProviderInterface
         // parent::__construct( $scopeConfig );
         $this->scopeConfig = $scopeConfig;
 
-        var_dump($this->scopeConfig);
+        
     }
 
     /**
