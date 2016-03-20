@@ -27,13 +27,13 @@ final class ConfigProvider implements ConfigProviderInterface
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = array()
     ) {
-        parent::__construct(
-            $extensionFactory,
-            $customAttributeFactory,
-            $paymentData,
-            $scopeConfig,
-            $data
-        );
+        // parent::__construct(
+        //     $extensionFactory,
+        //     $customAttributeFactory,
+        //     $paymentData,
+        //     $scopeConfig,
+        //     $data
+        // );
     }
 
     /**
