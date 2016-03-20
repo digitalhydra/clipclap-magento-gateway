@@ -8,10 +8,9 @@ namespace Magento\ClipClapGateway\Model\Ui;
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
 
-use Magento\Quote\Api\Data\CartInterface;
-use Magento\Payment\Model\Method\AbstractMethod;
-use Magento\TMRobokassa\Model\Config\Source\Order\Status\Paymentreview;
-use Magento\Sales\Model\Order;
+use Magento\Framework\Locale\ResolverInterface;
+use Magento\Customer\Helper\Session\CurrentCustomer;
+use Magento\Payment\Helper\Data as PaymentHelper;
 
 /**
  * Class ConfigProvider
@@ -19,21 +18,52 @@ use Magento\Sales\Model\Order;
 final class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
+    /**
+     * @var ResolverInterface
+     */
+    protected $localeResolver;
 
+    /**
+     * @var Config
+     */
+    protected $config;
+
+    /**
+     * @var \Magento\Customer\Helper\Session\CurrentCustomer
+     */
+    protected $currentCustomer;
+
+    /**
+     * @var \Magento\Payment\Model\Method\AbstractMethod[]
+     */
+    protected $methods = [];
+
+    /**
+     * @var PaymentHelper
+     */
+    protected $paymentHelper;
+
+    /**
+     * @param ConfigFactory $configFactory
+     * @param ResolverInterface $localeResolver
+     * @param CurrentCustomer $currentCustomer
+     * @param PaypalHelper $paypalHelper
+     * @param PaymentHelper $paymentHelper
+     */
     public function __construct(
-        \Magento\Framework\Api\ExtensionAttributesFactory $extensionFactory,
-        \Magento\Framework\Api\AttributeValueFactory $customAttributeFactory,
-        \Magento\Payment\Helper\Data $paymentData,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        array $data = array()
+        ConfigFactory $configFactory,
+        ResolverInterface $localeResolver,
+        CurrentCustomer $currentCustomer,
+        PaypalHelper $paypalHelper,
+        PaymentHelper $paymentHelper
     ) {
-        // parent::__construct(
-        //     $extensionFactory,
-        //     $customAttributeFactory,
-        //     $paymentData,
-        //     $scopeConfig,
-        //     $data
-        // );
+        $this->localeResolver = $localeResolver;
+        $this->config = $configFactory->create();
+        $this->currentCustomer = $currentCustomer;
+        $this->paypalHelper = $paypalHelper;
+        $this->paymentHelper = $paymentHelper;
+
+        
     }
 
     /**
