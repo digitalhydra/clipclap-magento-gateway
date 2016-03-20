@@ -25,9 +25,9 @@ class ConfigProvider implements ConfigProviderInterface
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     ) {
         // parent::__construct( $scopeConfig );
-        $this->scopeConfig = $scopeConfig;
+        $this->_scopeConfig = $scopeConfig;
 
-        
+        $this->merchantKey = $this->_scopeConfig->getValue('merchant_key','default');
     }
 
     /**
@@ -44,7 +44,7 @@ class ConfigProvider implements ConfigProviderInterface
                         ClientMock::SUCCESS => __('Success'),
                         ClientMock::FAILURE => __('Fraud')
                     ],
-                    'config'=>$this->scopeConfig,
+                    'config'=>$this->merchantKey,
                     'merchantKey' => 'some_key',
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
