@@ -7,8 +7,6 @@ namespace Magento\ClipClapGateway\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
-use Magento\Framework\App\Config\ScopeConfigInterface;
-
 
 /**
  * Class ConfigProvider
@@ -21,11 +19,11 @@ class ConfigProvider implements ConfigProviderInterface
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
-    
+
     public function __construct(
-        ScopeConfigInterface $scopeConfig,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
     ) {
-        
+        parent::__construct( $scopeConfig );
         $this->scopeConfig = $scopeConfig;
 
         
