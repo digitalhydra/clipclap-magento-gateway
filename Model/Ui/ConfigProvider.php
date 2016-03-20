@@ -25,13 +25,13 @@ class ConfigProvider implements ConfigProviderInterface
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = array()
     ) {
-        parent::__construct($context,
-            $registry,
-            $extensionFactory,
-            $customAttributeFactory,
-            $paymentData,
-            $scopeConfig,
-            $data);
+        // parent::__construct($context,
+        //     $registry,
+        //     $extensionFactory,
+        //     $customAttributeFactory,
+        //     $paymentData,
+        //     $scopeConfig,
+        //     $data);
  
         $this->_scopeConfig = $scopeConfig;
         // $this->_merchantKey =  $this->getConfigData('merchant_key');
