@@ -16,7 +16,8 @@ use Magento\Sales\Model\Order;
  * Class ConfigProvider
  */
 // final class ConfigProvider implements ConfigProviderInterface
-class ConfigProvider implements AbstractMethod
+// class ConfigProvider implements AbstractMethod
+class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
 
