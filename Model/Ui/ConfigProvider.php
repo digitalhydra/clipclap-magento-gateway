@@ -36,7 +36,7 @@ use Magento\Store\Model\ScopeInterface;
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.TooManyFields)
  */
-class configProvider implements ConfigProviderInterface
+class ConfigProvider implements ConfigProviderInterface
 {
     /**
      * @var CheckoutHelper
