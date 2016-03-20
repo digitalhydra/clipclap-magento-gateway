@@ -20,14 +20,14 @@ class ConfigProvider implements ConfigProviderInterface
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
-    
+
     public function __construct(
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     ) {
         // parent::__construct( $scopeConfig );
         $this->scopeConfig = $scopeConfig;
 
-        
+        var_dump($this->scopeConfig);
     }
 
     /**
@@ -44,6 +44,7 @@ class ConfigProvider implements ConfigProviderInterface
                         ClientMock::SUCCESS => __('Success'),
                         ClientMock::FAILURE => __('Fraud')
                     ],
+                    'config'=>$this->scopeConfig,
                     'merchantKey' => 'some_key',
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
