@@ -26,7 +26,7 @@ final class ConfigProvider implements ConfigProviderInterface
             $data
         );
  
-        $this->_merchantkey = $this->getConfigData('merchant_key');
+        $this->_scopeConfig = $scopeConfig;
     }
 
     /**
