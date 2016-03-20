@@ -7,6 +7,8 @@ namespace Magento\ClipClapGateway\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
+use Magento\Checkout\Model\Session as CheckoutSession;
+
 
 /**
  * Class ConfigProvider
@@ -16,13 +18,19 @@ class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
 
+    /**
+     * @var CheckoutSession
+     */
+    private $checkoutSession;
+
+    /**
+     * @var \Magento\Quote\Api\PaymentMethodManagementInterface
+     */
+    protected $paymentMethodManagement;
+    
     public function __construct(
-        \Magento\Framework\Model\Context $context,
-        \Magento\Framework\Registry $registry,
-        \Magento\Framework\Api\ExtensionAttributesFactory $extensionFactory,
-        \Magento\Framework\Api\AttributeValueFactory $customAttributeFactory,
-        \Magento\Payment\Helper\Data $paymentData,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        CheckoutSession $checkoutSession,
+        \Magento\Quote\Api\PaymentMethodManagementInterface $paymentMethodManagement,
         array $data = array()
     ) {
         // parent::__construct($context,
@@ -33,10 +41,12 @@ class ConfigProvider implements ConfigProviderInterface
         //     $scopeConfig,
         //     $data);
  
-        $this->_scopeConfig = $scopeConfig;
-        // $this->_merchantKey =  $this->getConfigData('merchant_key');
-        $this->_merchantKey = $this->_scopeConfig->getValue('merchant_id');
+        // $this->_scopeConfig = $scopeConfig;
+        // // $this->_merchantKey =  $this->getConfigData('merchant_key');
+        // $this->_merchantKey = $this->_scopeConfig->getValue('merchant_id');
         // $this->getConfigData('merchant_key')
+        $this->checkoutSession = $checkoutSession;
+        $this->paymentMethodManagement = $paymentMethodManagement;
     }
 
     public function getConfig()
