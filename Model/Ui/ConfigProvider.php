@@ -18,7 +18,7 @@ final class ConfigProvider implements ConfigProviderInterface
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Payment\Helper\Data $paymentData,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = array()
     ) {
         parent::__construct(
