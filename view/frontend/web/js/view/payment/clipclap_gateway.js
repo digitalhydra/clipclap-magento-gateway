@@ -19,7 +19,7 @@
         }
     };
 
-    console.log('transfer_options',window.checkoutConfig.payment.clipclap_gateway);
+    console.log('transfer_options',window.checkoutConfig.payment);
 
 /*global define*/
 define(

@@ -16,13 +16,11 @@ final class ConfigProvider implements ConfigProviderInterface
     const CODE = 'clipclap_gateway';
 
     public function __construct(
-        \Magento\Framework\Model\Context $context,
         \Magento\Payment\Helper\Data $paymentData,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = array()
     ) {
         parent::__construct(
-            $context,
             $paymentData,
             $scopeConfig,
             $data
