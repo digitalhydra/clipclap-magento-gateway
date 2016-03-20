@@ -33,6 +33,8 @@ class ConfigProvider implements ConfigProviderInterface
         \Magento\Quote\Api\PaymentMethodManagementInterface $paymentMethodManagement,
         array $data = array()
     ) {
+        
+        $quoteId = $this->checkoutSession->getQuote()->getId();
         // parent::__construct($context,
         //     $registry,
         //     $extensionFactory,
