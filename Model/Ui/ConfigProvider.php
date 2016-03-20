@@ -41,6 +41,9 @@ class ConfigProvider implements ConfigProviderInterface
 
     public function getConfig()
     {
+
+        // $output['paymentMethods'] = $this->getPaymentMethods();
+
         return [
             'payment' => [
                 self::CODE => [
@@ -52,7 +55,27 @@ class ConfigProvider implements ConfigProviderInterface
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
                 ]
-            ]
+            ],
+            'paymentMethods'=>$this->getPaymentMethods()
         ];
+    }
+
+    /**
+     * Returns array of payment methods
+     * @return array
+     */
+    private function getPaymentMethods()
+    {
+        $paymentMethods = [];
+        $quote = $this->checkoutSession->getQuote();
+        if ($quote->getIsVirtual()) {
+            foreach ($this->paymentMethodManagement->getList($quote->getId()) as $paymentMethod) {
+                $paymentMethods[] = [
+                    'code' => $paymentMethod->getCode(),
+                    'title' => $paymentMethod->getTitle()
+                ];
+            }
+        }
+        return $paymentMethods;
     }
 }
