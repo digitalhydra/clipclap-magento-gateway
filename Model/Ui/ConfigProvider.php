@@ -27,6 +27,7 @@ final class ConfigProvider implements ConfigProviderInterface
     //     );
  
         $this->_scopeConfig = $scopeConfig;
+        // $this->getConfigData('merchant_key')
     }
 
     /**
@@ -36,6 +37,7 @@ final class ConfigProvider implements ConfigProviderInterface
      */
     public function getConfig()
     {
+        $showTemplateHint =  $this->_scopeConfig->getValue('merchant_key', \Magento\ClipClapGateway\Model\ScopeInterface::SCOPE_STORE);
         return [
             'payment' => [
                 self::CODE => [
@@ -43,7 +45,7 @@ final class ConfigProvider implements ConfigProviderInterface
                         ClientMock::SUCCESS => __('Success'),
                         ClientMock::FAILURE => __('Fraud')
                     ],
-                    'merchantKey' => $this->getConfigData('merchant_key'),
+                    'merchantKey' => '',
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
                 ]
