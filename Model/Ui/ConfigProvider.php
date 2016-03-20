@@ -7,41 +7,16 @@ namespace Magento\ClipClapGateway\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\ClipClapGateway\Gateway\Http\Client\ClientMock;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 
-use Magento\Framework\Locale\ResolverInterface;
-use Magento\Customer\Helper\Session\CurrentCustomer;
-use Magento\Payment\Helper\Data as PaymentHelper;
 
 /**
  * Class ConfigProvider
  */
-final class ConfigProvider implements ConfigProviderInterface
+class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
-    /**
-     * @var ResolverInterface
-     */
-    protected $localeResolver;
-
-    /**
-     * @var Config
-     */
-    protected $config;
-
-    /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomer
-     */
-    protected $currentCustomer;
-
-    /**
-     * @var \Magento\Payment\Model\Method\AbstractMethod[]
-     */
-    protected $methods = [];
-
-    /**
-     * @var PaymentHelper
-     */
-    protected $paymentHelper;
+    
 
     /**
      * @param ConfigFactory $configFactory
@@ -51,17 +26,10 @@ final class ConfigProvider implements ConfigProviderInterface
      * @param PaymentHelper $paymentHelper
      */
     public function __construct(
-        ConfigFactory $configFactory,
-        ResolverInterface $localeResolver,
-        CurrentCustomer $currentCustomer,
-        PaypalHelper $paypalHelper,
-        PaymentHelper $paymentHelper
+        ScopeConfigInterface $scopeConfig,
     ) {
-        $this->localeResolver = $localeResolver;
-        $this->config = $configFactory->create();
-        $this->currentCustomer = $currentCustomer;
-        $this->paypalHelper = $paypalHelper;
-        $this->paymentHelper = $paymentHelper;
+        
+        $this->scopeConfig = $scopeConfig;
 
         
     }
@@ -84,7 +52,8 @@ final class ConfigProvider implements ConfigProviderInterface
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
                 ]
-            ]
+            ],
+            'config'=>$this->scopeConfig
         ];
     }
 }
