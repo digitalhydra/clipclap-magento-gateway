@@ -34,7 +34,7 @@ class ConfigProvider implements ConfigProviderInterface
             'payment/clipclap_gateway/iva_type',
             'store'
         );
-        $this->ivaTax = $this->_scopeConfig->getValue(
+        $this->debugMode = $this->_scopeConfig->isSetFlag(
             'payment/clipclap_gateway/debug',
             'store'
         );
