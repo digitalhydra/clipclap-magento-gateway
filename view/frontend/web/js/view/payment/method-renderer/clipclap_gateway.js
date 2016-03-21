@@ -4,23 +4,23 @@
  */
 /*browser:true*/
 
-require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
-    function (paybutton) { 
+// require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
+//     function (paybutton) { 
 
-        console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
-        var evt = document.createEvent('Event');
-        evt.initEvent('load',false,false);
-        window.dispatchEvent(evt);
+//         console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
+//         var evt = document.createEvent('Event');
+//         evt.initEvent('load',false,false);
+//         window.dispatchEvent(evt);
         
-    }
-);
+//     }
+// );
 /*global define*/
 define(
     [
         'Magento_Checkout/js/view/payment/default',
         'https://clipclap.co/paybutton/js/paybutton.min.js'
     ],
-    function (Component) {
+    function (Component,paybutton) {
         'use strict';
         // console.log('comp')
         
@@ -35,15 +35,19 @@ define(
 
                 var ivaTax = window.checkoutConfig.payment.ivaTax;
                 var quoteTotal = window.checkoutConfig.totalsData.base_grand_total;
-                var tax_rate = ($value * ivaTax)/100;
+                var tax_rate = (quoteTotal * ivaTax)/100;
+                var orderId = window.checkoutConfig.formKey;
+                var order_id = window.checkoutConfig.quoteData.entity_id;
+
+                console.log(order_id,orderId);
 
                 _$clipclap._Buttons = {
                     "#botonClipClap":{
-                        'paymentRef': 'Order 456787865',
-                        'netValue': '13000',
-                        'taxValue': '1000',
-                        'tipValue': '500',
-                        'description': 'Compra de pruebas magento'
+                        'paymentRef': 'Orden '+order_id,
+                        'netValue': quoteTotal,
+                        'taxValue': tax_rate,
+                        'tipValue': '0',
+                        'description': 'Compra por valor de '+quoteTotal
                     }
                 };
 

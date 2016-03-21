@@ -10,11 +10,7 @@
 
     _$clipclap._setKey = window.checkoutConfig.payment.merchantKey;
     _$clipclap._themeButton = window.checkoutConfig.payment.buttonTheme;
-
     _$clipclap._debugButton = window.checkoutConfig.payment.debugMode;
-    
-
-    console.log('transfer_options',window.checkoutConfig.payment);
 
 /*global define*/
 define(
