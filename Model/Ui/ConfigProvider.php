@@ -51,8 +51,8 @@ class ConfigProvider implements ConfigProviderInterface
                         ClientMock::FAILURE => __('Fraud')
                     ],
                     'merchantKey' => $this->merchantKey,
-                    'buttonTheme' => 'el azul',
-                    'ivaTax' => 'el iva',
+                    'buttonTheme' => $this->buttonTheme,
+                    'ivaTax' => $this->ivaTax,
                 ]
             ]
         ];
