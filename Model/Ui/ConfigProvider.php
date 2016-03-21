@@ -22,14 +22,14 @@ class ConfigProvider implements ConfigProviderInterface
 
         $this->_scopeConfig = $scopeConfig;
 
-        // $this->merchantKey = $this->_scopeConfig->getValue(
-        //     'payment/clipclap_gateway/merchant_key',
-        //     ScopeInterface::SCOPE_STORE
-        // );
-        $this->policy = $this->_scopeConfig->getValue(
-            'shipping/shipping_policy/shipping_policy_content',
+        $this->merchantKey = $this->_scopeConfig->getValue(
+            'payment/clipclap_gateway/merchant_key',
             'store'
         );
+        // $this->policy = $this->_scopeConfig->getValue(
+        //     'shipping/shipping_policy/shipping_policy_content',
+        //     'store'
+        // );
     }
 
     /**
