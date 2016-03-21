@@ -33,7 +33,7 @@ define(
             initObservable: function () {
                 console.log('initObservable');
 
-                var ivaTax = window.checkoutConfig.payment.ivaTax;
+                var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
                 var quoteTotal = window.checkoutConfig.totalsData.base_grand_total;
                 var tax_rate = (quoteTotal * ivaTax)/100;
                 var orderId = window.checkoutConfig.formKey;

@@ -8,9 +8,9 @@
 
     var _$clipclap = _$clipclap || {};
 
-    _$clipclap._setKey = window.checkoutConfig.payment.merchantKey;
-    _$clipclap._themeButton = window.checkoutConfig.payment.buttonTheme;
-    _$clipclap._debugButton = window.checkoutConfig.payment.clip_clap.debugMode;
+    _$clipclap._setKey = window.checkoutConfig.payment.clipclap_gateway.merchantKey;
+    _$clipclap._themeButton = window.checkoutConfig.payment.clipclap_gateway.buttonTheme;
+    _$clipclap._debugButton = window.checkoutConfig.payment.clipclap_gateway.debugMode;
 
 /*global define*/
 define(
