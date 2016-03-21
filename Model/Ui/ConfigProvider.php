@@ -20,7 +20,7 @@ class ConfigProvider implements ConfigProviderInterface
     ) {
         // parent::__construct( $scopeConfig );
 
-        // $this->_scopeConfig = $scopeConfig;
+        $this->_scopeConfig = $scopeConfig;
 
         // $this->merchantKey = $this->_scopeConfig->getValue(
         //     'payment_us/clipclap_gateway/merchant_key',
