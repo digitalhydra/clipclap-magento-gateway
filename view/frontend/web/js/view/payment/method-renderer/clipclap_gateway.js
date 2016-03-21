@@ -49,6 +49,8 @@ define(
                     }
                 };
 
+                window._$clipclap.transactionState = this.getTransactionState();
+
                 this._super()
                     .observe([
                         'transactionResult'
@@ -64,8 +66,6 @@ define(
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
-
-                    _$clipclap.transactionState = this.getTransactionState();
 
             },
             getTransactionState:function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
