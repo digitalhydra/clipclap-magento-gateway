@@ -27,9 +27,9 @@ class ConfigProvider implements ConfigProviderInterface
         //     ScopeInterface::SCOPE_STORE
         // );
         $this->policy = $this->_scopeConfig->getValue(
-                    'shipping/shipping_policy/shipping_policy_content',
-                    ScopeInterface::SCOPE_STORE
-                );
+            'shipping/shipping_policy/shipping_policy_content',
+            'store'
+        );
     }
 
     /**
