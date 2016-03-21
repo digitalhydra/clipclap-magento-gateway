@@ -15,23 +15,17 @@ class ConfigProvider implements ConfigProviderInterface
 {
     const CODE = 'clipclap_gateway';
     
-
-    /**
-     * @var ScopeConfigInterface
-     */
-    protected $scopeConfig;
-
     public function __construct(
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     ) {
-        parent::__construct( $scopeConfig );
-        
+        // parent::__construct( $scopeConfig );
+
         $this->_scopeConfig = $scopeConfig;
 
         $this->merchantKey = $this->_scopeConfig->getValue(
-                    'payment_us/clipclap_gateway/merchant_key',
-                    ScopeInterface::SCOPE_STORE
-                );
+            'payment_us/clipclap_gateway/merchant_key',
+            ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
