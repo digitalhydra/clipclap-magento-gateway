@@ -31,7 +31,7 @@ define(
             },
 
             initObservable: function () {
-                console.log('initObservable');
+                // console.log('initObservable');
 
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
                 var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
@@ -49,9 +49,6 @@ define(
                     }
                 };
 
-                    console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
-
-
                 this._super()
                     .observe([
                         'transactionResult'
@@ -59,7 +56,6 @@ define(
                 return this;
             },
             getInstructions:function(){
-                console.log('set instructions');
                 
             },
             getClipCLapButton:function(){
@@ -69,17 +65,14 @@ define(
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
 
-                console.log('set instructions')
-                
             },
             getCode: function() {
-                console.log('getCode');
-
+                // console.log('getCode');
                 return 'clipclap_gateway';
             },
 
             getData: function() {
-                console.log('getData');
+                // console.log('getData');
                 
                 return {
                     'method': this.item.method,

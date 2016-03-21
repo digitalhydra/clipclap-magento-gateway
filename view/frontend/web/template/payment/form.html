@@ -34,7 +34,7 @@
 
             <div class="control">
 
-                <select name="payment[transaction_result]"
+                <!-- <select name="payment[transaction_result]"
                         class="select"
                         data-bind="
                                   options: getTransactionResults(),
@@ -42,23 +42,23 @@
                                   optionsText: 'transaction_result',
                                   optionsCaption: $t('Transaction Result'),
                                   value: transactionResult">
-                </select>
-
+                </select> -->
+                <input type="hidden" name="payment[transaction_result]" data-bind="attr:{'value':transactionResult}">
             </div>
         </div>
 
         <div class="actions-toolbar">
-        <button id="botonClipClap" data-bind="attr: {'value': getClipCLapButton()}"></button>
 
             <div class="primary">
-                <button class="action primary checkout"
+                <button id="botonClipClap" data-bind="attr: {'value': getClipCLapButton()}"></button>
+                <!-- <button class="action primary checkout"
                         type="submit"
                         data-bind="
                         click: placeOrder,
                         attr: {title: $t('Place Order')}
                         ">
                     <span data-bind="i18n: 'Place Order'"></span>
-                </button>
+                </button> -->
             </div>
         </div>
     </div>
