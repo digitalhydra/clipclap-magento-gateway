@@ -89,7 +89,8 @@ define(
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
-
+                    
+                return true;
             },
             getCode: function() {
                 // console.log('getCode');
