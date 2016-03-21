@@ -34,7 +34,7 @@ define(
                 console.log('initObservable');
 
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
-                var quoteTotal = window.checkoutConfig.totalsData.base_grand_total;
+                var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
                 var tax_rate = (quoteTotal * ivaTax)/100;
                 var orderId = window.checkoutConfig.formKey;
                 var order_id = window.checkoutConfig.quoteData.entity_id;
@@ -50,7 +50,7 @@ define(
                 };
 
                     console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
-                    
+
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
