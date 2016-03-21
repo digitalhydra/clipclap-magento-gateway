@@ -59,7 +59,7 @@ define(
                 
             },
             getClipCLapButton:function(){
-                console.log('call getClipCLapButton');
+                console.log('call getClipCLapButton',window._$clipclap);
 
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);

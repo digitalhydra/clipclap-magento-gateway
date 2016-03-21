@@ -3,11 +3,7 @@
  * See COPYING.txt for license details.
  */
 /*browser:true*/
-
-    console.log('clipclap_define_var',window.checkoutConfig.payment);
-
     var _$clipclap = _$clipclap || {};
-
     _$clipclap._setKey = window.checkoutConfig.payment.clipclap_gateway.merchantKey;
     _$clipclap._themeButton = window.checkoutConfig.payment.clipclap_gateway.buttonTheme;
     _$clipclap._debugButton = window.checkoutConfig.payment.clipclap_gateway.debugMode;
