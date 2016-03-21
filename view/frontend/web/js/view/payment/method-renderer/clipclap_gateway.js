@@ -42,10 +42,10 @@ define(
                 window._$clipclap._Buttons = {
                     "#botonClipClap":{
                         'paymentRef': 'Orden '+order_id,
-                        'netValue': quoteTotal.toFixed(2),
+                        'netValue': quoteTotal.toFixed(0),
                         'taxValue': tax_rate,
                         'tipValue': '0',
-                        'description': 'Compra por valor de '+quoteTotal.toFixed(2)
+                        'description': 'Compra por valor de '+quoteTotal.toFixed(0)
                     }
                 };
 
