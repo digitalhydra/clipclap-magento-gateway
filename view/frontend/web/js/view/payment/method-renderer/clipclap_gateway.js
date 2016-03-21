@@ -17,7 +17,8 @@ require(['https://clipclap.co/paybutton/js/paybutton.min.js'],
 /*global define*/
 define(
     [
-        'Magento_Checkout/js/view/payment/default'
+        'Magento_Checkout/js/view/payment/default',
+        'https://clipclap.co/paybutton/js/paybutton.min.js'
     ],
     function (Component) {
         'use strict';
@@ -31,6 +32,20 @@ define(
 
             initObservable: function () {
                 console.log('initObservable');
+
+                var ivaTax = window.checkoutConfig.payment.ivaTax;
+                var quoteTotal = window.checkoutConfig.totalsData.base_grand_total;
+                var tax_rate = ($value * ivaTax)/100;
+
+                _$clipclap._Buttons = {
+                    "#botonClipClap":{
+                        'paymentRef': 'Order 456787865',
+                        'netValue': '13000',
+                        'taxValue': '1000',
+                        'tipValue': '500',
+                        'description': 'Compra de pruebas magento'
+                    }
+                };
 
                 this._super()
                     .observe([

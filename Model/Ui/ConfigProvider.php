@@ -34,6 +34,10 @@ class ConfigProvider implements ConfigProviderInterface
             'payment/clipclap_gateway/iva_type',
             'store'
         );
+        $this->ivaTax = $this->_scopeConfig->getValue(
+            'payment/clipclap_gateway/debug',
+            'store'
+        );
     }
 
     /**
@@ -53,6 +57,7 @@ class ConfigProvider implements ConfigProviderInterface
                     'merchantKey' => $this->merchantKey,
                     'buttonTheme' => $this->buttonTheme,
                     'ivaTax' => $this->ivaTax,
+                    'debugMode' => $this->debugMode,
                 ]
             ]
         ];
