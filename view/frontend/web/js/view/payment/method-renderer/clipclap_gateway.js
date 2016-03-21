@@ -39,19 +39,18 @@ define(
                 var orderId = window.checkoutConfig.formKey;
                 var order_id = window.checkoutConfig.quoteData.entity_id;
 
-                console.log(order_id,orderId);
-
-                _$clipclap._Buttons = {
+                window._$clipclap._Buttons = {
                     "#botonClipClap":{
                         'paymentRef': 'Orden '+order_id,
-                        'netValue': quoteTotal,
+                        'netValue': quoteTotal.toFixed(2),
                         'taxValue': tax_rate,
                         'tipValue': '0',
-                        'description': 'Compra por valor de '+quoteTotal
+                        'description': 'Compra por valor de '+quoteTotal.toFixed(2)
                     }
                 };
 
                     console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
+                    
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
