@@ -24,7 +24,8 @@ class ConfigProvider implements ConfigProviderInterface
     public function __construct(
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     ) {
-        // parent::__construct( $scopeConfig );
+        parent::__construct( $scopeConfig );
+        
         $this->_scopeConfig = $scopeConfig;
 
         $this->merchantKey = $this->_scopeConfig->getValue(
