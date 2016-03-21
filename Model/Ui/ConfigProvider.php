@@ -20,12 +20,12 @@ class ConfigProvider implements ConfigProviderInterface
     ) {
         // parent::__construct( $scopeConfig );
 
-        $this->_scopeConfig = $scopeConfig;
+        // $this->_scopeConfig = $scopeConfig;
 
-        $this->merchantKey = $this->_scopeConfig->getValue(
-            'payment_us/clipclap_gateway/merchant_key',
-            ScopeInterface::SCOPE_STORE
-        );
+        // $this->merchantKey = $this->_scopeConfig->getValue(
+        //     'payment_us/clipclap_gateway/merchant_key',
+        //     ScopeInterface::SCOPE_STORE
+        // );
     }
 
     /**
@@ -42,7 +42,6 @@ class ConfigProvider implements ConfigProviderInterface
                         ClientMock::SUCCESS => __('Success'),
                         ClientMock::FAILURE => __('Fraud')
                     ],
-                    'config'=>$this->merchantKey,
                     'merchantKey' => 'some_key',
                     'buttonTheme' => 'el azul',
                     'ivaTax' => 'el iva',
