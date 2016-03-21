@@ -51,6 +51,11 @@ define(
                     }
                 };
 
+                    console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
+                    var evt = document.createEvent('Event');
+                    evt.initEvent('load',false,false);
+                    window.dispatchEvent(evt);
+
                 this._super()
                     .observe([
                         'transactionResult'
