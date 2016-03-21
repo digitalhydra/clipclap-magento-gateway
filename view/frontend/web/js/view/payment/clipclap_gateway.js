@@ -4,13 +4,13 @@
  */
 /*browser:true*/
 
-    console.log('clipclap_define_var');
+    console.log('clipclap_define_var',window.checkoutConfig.payment);
 
     var _$clipclap = _$clipclap || {};
 
     _$clipclap._setKey = window.checkoutConfig.payment.merchantKey;
     _$clipclap._themeButton = window.checkoutConfig.payment.buttonTheme;
-    _$clipclap._debugButton = window.checkoutConfig.payment.debugMode;
+    _$clipclap._debugButton = window.checkoutConfig.payment.clip_clap.debugMode;
 
 /*global define*/
 define(
