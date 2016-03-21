@@ -26,10 +26,14 @@ class ConfigProvider implements ConfigProviderInterface
             'payment/clipclap_gateway/merchant_key',
             'store'
         );
-        // $this->policy = $this->_scopeConfig->getValue(
-        //     'shipping/shipping_policy/shipping_policy_content',
-        //     'store'
-        // );
+        $this->buttonTheme = $this->_scopeConfig->getValue(
+            'payment/clipclap_gateway/button_type',
+            'store'
+        );
+        $this->ivaTax = $this->_scopeConfig->getValue(
+            'payment/clipclap_gateway/iva_type',
+            'store'
+        );
     }
 
     /**
