@@ -59,15 +59,16 @@ define(
                 return this;
             },
             getInstructions:function(){
-                console.log('set instructions')
+                console.log('set instructions');
                 
             },
             getClipCLapButton:function(){
+                console.log('call getClipCLapButton');
 
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
-                    
+
                 console.log('set instructions')
                 
             },
