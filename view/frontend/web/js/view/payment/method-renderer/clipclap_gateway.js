@@ -51,9 +51,6 @@ define(
 
                     console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
 
-                    var evt = document.createEvent('Event');
-                    evt.initEvent('load',false,false);
-                    window.dispatchEvent(evt);
 
                 this._super()
                     .observe([
@@ -65,9 +62,18 @@ define(
                 console.log('set instructions')
                 
             },
+            getClipCLapButton:function(){
 
+                    var evt = document.createEvent('Event');
+                    evt.initEvent('load',false,false);
+                    window.dispatchEvent(evt);
+                    
+                console.log('set instructions')
+                
+            },
             getCode: function() {
                 console.log('getCode');
+
                 return 'clipclap_gateway';
             },
 
@@ -80,18 +86,6 @@ define(
                         'transaction_result': this.transactionResult()
                     }
                 };
-            },
-            getMerchantKey: function () {
-                console.log('getMerchantKey');
-                return window.checkoutConfig.payment.clipclap_gateway.merchantKey;
-            },
-            getButtonTheme: function () {
-                console.log('getButtonTheme');
-                return window.checkoutConfig.payment.clipclap_gateway.buttonTheme;
-            },
-            getIvaTax: function () {
-                console.log('getIvaTax');
-                return window.checkoutConfig.payment.clipclap_gateway.ivaTax;
             },
             getTransactionResults: function() {
                 console.log('getTransactionResults');
