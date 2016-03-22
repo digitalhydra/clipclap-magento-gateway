@@ -68,7 +68,7 @@ define(
 
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
-                    document.dispatchEvent(evt);
+                    window.dispatchEvent(evt);
 
                 return true;
             },
