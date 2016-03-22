@@ -14,8 +14,8 @@
                 _$clipclap._Buttons = {
                     "#botonClipClap":{
                         'paymentRef': 'Orden '+orderId+'#'+orderHash,
-                        'netValue': quoteTotal.toFixed(0),
-                        'taxValue': tax_rate,
+                        'netValue': quoteTotal.toFixed(0)+'',
+                        'taxValue': tax_rate+'',
                         'tipValue': '0',
                         'description': 'Compra por valor de '+quoteTotal.toFixed(0)
                     }
