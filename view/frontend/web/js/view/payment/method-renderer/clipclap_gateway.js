@@ -4,35 +4,6 @@
  */
 /*browser:true*/
 
-// require(['https://clipclap.co/paybutton/js/paybutton.min.js'], 
-//     function (paybutton) { 
-
-//         console.log('load paybutton con requirejs y re emite window.load',window._$clipclap); 
-//         var evt = document.createEvent('Event');
-//         evt.initEvent('load',false,false);
-//         window.dispatchEvent(evt);
-        
-//     }
-// );
-/*global define*/
-define(
-    [
-        'Magento_Checkout/js/view/payment/default',
-        'https://clipclap.co/paybutton/js/paybutton.min.js'
-    ],
-    function (Component,paybutton) {
-        'use strict';
-        // console.log('comp')
-        
-        return Component.extend({
-            defaults: {
-                template: 'Magento_ClipClapGateway/payment/form',
-                transactionResult: ''
-            },
-
-            initObservable: function () {
-                // console.log('initObservable');
-
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
                 var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
                 var tax_rate = (quoteTotal * ivaTax)/100;
@@ -62,6 +33,26 @@ define(
                     };
 
                 };
+
+/*global define*/
+define(
+    [
+        'Magento_Checkout/js/view/payment/default',
+        'https://clipclap.co/paybutton/js/paybutton.min.js'
+    ],
+    function (Component,paybutton) {
+        'use strict';
+        // console.log('comp')
+        
+        return Component.extend({
+            defaults: {
+                template: 'Magento_ClipClapGateway/payment/form',
+                transactionResult: ''
+            },
+
+            initObservable: function () {
+                // console.log('initObservable');
+
 
                 this._super()
                     .observe([
