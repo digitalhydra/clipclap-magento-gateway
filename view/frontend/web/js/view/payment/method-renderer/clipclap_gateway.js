@@ -40,7 +40,7 @@ define(
                 var d = new Date();
                 var orderHash = d.getTime();
 
-                window._$clipclap._Buttons = {
+                _$clipclap._Buttons = {
                     "#botonClipClap":{
                         'paymentRef': 'Orden '+orderId+'#'+orderHash,
                         'netValue': quoteTotal.toFixed(0),
@@ -50,7 +50,7 @@ define(
                     }
                 };
 
-                window._$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
+                _$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
 
                     _$clipclap.transactionData = {
                         'estado' : status,
