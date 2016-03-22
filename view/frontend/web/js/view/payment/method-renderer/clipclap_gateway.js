@@ -37,8 +37,8 @@ define(
             getClipCLapButton:function(){
 
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
-                var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
-                var tax_rate = (quoteTotal * ivaTax)/100;
+                var quoteTotal = (parseFloat(window.checkoutConfig.totalsData.base_grand_total)).toString();
+                var tax_rate = ((quoteTotal * ivaTax)/100).toString();
                 var orderId = window.checkoutConfig.formKey;
                 var d = new Date();
                 var orderHash = d.getTime();
