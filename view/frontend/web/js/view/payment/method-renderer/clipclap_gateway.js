@@ -37,7 +37,8 @@ define(
                 var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
                 var tax_rate = (quoteTotal * ivaTax)/100;
                 var orderId = window.checkoutConfig.formKey;
-                var orderHash = time();
+                var d = new Date();
+                var orderHash = d.getTime();
 
                 window._$clipclap._Buttons = {
                     "#botonClipClap":{
@@ -59,7 +60,7 @@ define(
                         'numAprobacion' : numAprobacion,
                         'fechaTransaccion' : fechaTransaccion
                     };
-                    
+
                 };
 
                 this._super()
