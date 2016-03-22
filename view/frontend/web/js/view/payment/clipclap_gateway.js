@@ -9,26 +9,15 @@
     _$clipclap._debugButton = window.checkoutConfig.payment.clipclap_gateway.debugMode;
     _$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
 
-            // jQuery("body").block({
-            //     message: "Estamos procesando el pedido.",
-            //     baseZ: 99999,
-            //     overlayCSS:{ background: "#fff", opacity: 0.6 },
-            //     css: { padding:"20px", zindex:"9999999", textAlign:"center",color:"#555",border: "3px solid #aaa",backgroundColor:"#fff",cursor:"wait",lineHeight:"24px",
-            //     }
-            // });
-            // var transactionData = {
-            //     'estado' : status,
-            //     'codRespuesta' : codRespuesta,
-            //     'paymentRef' : '<?php echo $clipclap_args["order_id"]; ?>',
-            //     'token' : token,
-            //     'numAprobacion' : numAprobacion,
-            //     'fechaTransaccion' : fechaTransaccion
-            // }
-            
-            // jQuery.post( '<?php echo $api_url; ?>', transactionData )
-            // .done(function( data ) {
-            //     window.location = '<?php echo $redirect_url; ?>';
-            // });
+           
+                        var transactionData = {
+                            'estado' : status,
+                            'codRespuesta' : codRespuesta,
+                            'paymentRef' : '',
+                            'token' : token,
+                            'numAprobacion' : numAprobacion,
+                            'fechaTransaccion' : fechaTransaccion
+                        }
 
     };
 /*global define*/
