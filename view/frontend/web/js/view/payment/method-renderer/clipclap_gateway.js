@@ -66,7 +66,7 @@ define(
             getClipCLapButton:function(){
                 console.log('call getClipCLapButton',window._$clipclap);
 
-                    var evt = document.createEvent('Event');
+                    var evt = window.createEvent('Event');
                     evt.initEvent('load',false,false);
                     window.dispatchEvent(evt);
 
