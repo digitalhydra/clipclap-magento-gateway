@@ -8,16 +8,15 @@
     _$clipclap._themeButton = window.checkoutConfig.payment.clipclap_gateway.buttonTheme;
     _$clipclap._debugButton = window.checkoutConfig.payment.clipclap_gateway.debugMode;
     _$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
-
-           
-                        var transactionData = {
-                            'estado' : status,
-                            'codRespuesta' : codRespuesta,
-                            'paymentRef' : '',
-                            'token' : token,
-                            'numAprobacion' : numAprobacion,
-                            'fechaTransaccion' : fechaTransaccion
-                        }
+ 
+        _$clipclap.transactionData = {
+            'estado' : status,
+            'codRespuesta' : codRespuesta,
+            'paymentRef' : paymentRef,
+            'token' : token,
+            'numAprobacion' : numAprobacion,
+            'fechaTransaccion' : fechaTransaccion
+        }
 
     };
 /*global define*/

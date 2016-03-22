@@ -37,11 +37,11 @@ define(
                 var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
                 var tax_rate = (quoteTotal * ivaTax)/100;
                 var orderId = window.checkoutConfig.formKey;
-                var order_id = window.checkoutConfig.quoteData.entity_id;
+                var orderHash = time();
 
                 window._$clipclap._Buttons = {
                     "#botonClipClap":{
-                        'paymentRef': 'Orden '+order_id,
+                        'paymentRef': 'Orden '+orderId+'#'+orderHash,
                         'netValue': quoteTotal.toFixed(0),
                         'taxValue': tax_rate,
                         'tipValue': '0',
@@ -51,17 +51,15 @@ define(
 
                 window._$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
 
-                        
-                        var transactionData = {
-                            'estado' : status,
-                            'codRespuesta' : codRespuesta,
-                            'paymentRef' : '',
-                            'token' : token,
-                            'numAprobacion' : numAprobacion,
-                            'fechaTransaccion' : fechaTransaccion
-                        }
-                        
-
+                    _$clipclap.transactionData = {
+                        'estado' : status,
+                        'codRespuesta' : codRespuesta,
+                        'paymentRef' : paymentRef,
+                        'token' : token,
+                        'numAprobacion' : numAprobacion,
+                        'fechaTransaccion' : fechaTransaccion
+                    };
+                    
                 };
 
                 this._super()
