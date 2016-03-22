@@ -7,18 +7,7 @@
     _$clipclap._setKey = window.checkoutConfig.payment.clipclap_gateway.merchantKey;
     _$clipclap._themeButton = window.checkoutConfig.payment.clipclap_gateway.buttonTheme;
     _$clipclap._debugButton = window.checkoutConfig.payment.clipclap_gateway.debugMode;
-    _$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
- 
-        _$clipclap.transactionData = {
-            'estado' : status,
-            'codRespuesta' : codRespuesta,
-            'paymentRef' : paymentRef,
-            'token' : token,
-            'numAprobacion' : numAprobacion,
-            'fechaTransaccion' : fechaTransaccion
-        }
-
-    };
+    
 /*global define*/
 define(
     [

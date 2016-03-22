@@ -4,35 +4,6 @@
  */
 /*browser:true*/
 
-                var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
-                var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
-                var tax_rate = (quoteTotal * ivaTax)/100;
-                var orderId = window.checkoutConfig.formKey;
-                var d = new Date();
-                var orderHash = d.getTime();
-
-                _$clipclap._Buttons = {
-                    "#botonClipClap":{
-                        'paymentRef': 'Orden '+orderId+'#'+orderHash,
-                        'netValue': quoteTotal.toFixed(0)+'',
-                        'taxValue': tax_rate+'',
-                        'tipValue': '0',
-                        'description': 'Compra por valor de '+quoteTotal+''
-                    }
-                };
-
-                _$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
-
-                    _$clipclap.transactionData = {
-                        'estado' : status,
-                        'codRespuesta' : codRespuesta,
-                        'paymentRef' : paymentRef,
-                        'token' : token,
-                        'numAprobacion' : numAprobacion,
-                        'fechaTransaccion' : fechaTransaccion
-                    };
-
-                };
 
 /*global define*/
 define(
@@ -64,6 +35,37 @@ define(
                 
             },
             getClipCLapButton:function(){
+
+                var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
+                var quoteTotal = parseFloat(window.checkoutConfig.totalsData.base_grand_total);
+                var tax_rate = (quoteTotal * ivaTax)/100;
+                var orderId = window.checkoutConfig.formKey;
+                var d = new Date();
+                var orderHash = d.getTime();
+
+                window._$clipclap._Buttons = {
+                    "#botonClipClap":{
+                        'paymentRef': 'Orden '+orderId+'#'+orderHash,
+                        'netValue': quoteTotal.toFixed(0)+'',
+                        'taxValue': tax_rate+'',
+                        'tipValue': '0',
+                        'description': 'Compra por valor de '+quoteTotal+''
+                    }
+                };
+
+                window._$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
+
+                    window._$clipclap.transactionData = {
+                        'estado' : status,
+                        'codRespuesta' : codRespuesta,
+                        'paymentRef' : paymentRef,
+                        'token' : token,
+                        'numAprobacion' : numAprobacion,
+                        'fechaTransaccion' : fechaTransaccion
+                    };
+
+                };
+
                 console.log('call getClipCLapButton',window._$clipclap);
 
                     var evt = document.createEvent('Event');
