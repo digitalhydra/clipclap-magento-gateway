@@ -37,8 +37,8 @@ define(
             getClipCLapButton:function(){
 
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
-                var quoteTotal = (parseFloat(window.checkoutConfig.totalsData.base_grand_total)).toString();
-                var tax_rate = ((quoteTotal * ivaTax)/100).toString();
+                var quoteTotal = (parseFloat(window.checkoutConfig.totalsData.base_grand_total)).toFixed(0).toString();
+                var tax_rate = ((quoteTotal * ivaTax)/100).toFixed(0).toString();
                 var orderId = window.checkoutConfig.formKey;
                 var d = new Date();
                 var orderHash = d.getTime();
@@ -46,8 +46,8 @@ define(
                 window._$clipclap._Buttons = {
                     "#botonClipClap":{
                         'paymentRef': 'Orden '+orderId+'#'+orderHash,
-                        'netValue': (quoteTotal.toFixed(0))+'',
-                        'taxValue': (tax_rate.toFixed(0))+'',
+                        'netValue': (quoteTotal)+'',
+                        'taxValue': (tax_rate)+'',
                         'tipValue': '0',
                         'description': 'Compra por valor de '+quoteTotal+''
                     }
