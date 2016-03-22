@@ -46,8 +46,8 @@ define(
                 window._$clipclap._Buttons = {
                     "#botonClipClap":{
                         'paymentRef': 'Orden '+orderId+'#'+orderHash,
-                        'netValue': quoteTotal.toFixed(0)+'',
-                        'taxValue': tax_rate+'',
+                        'netValue': (quoteTotal.toFixed(0))+'',
+                        'taxValue': (tax_rate.toFixed(0))+'',
                         'tipValue': '0',
                         'description': 'Compra por valor de '+quoteTotal+''
                     }
