@@ -82,6 +82,7 @@ define(
                         'numAprobacion' : numAprobacion,
                         'fechaTransaccion' : fechaTransaccion
                     };
+                    console.log(window._$clipclap.transactionData);
                     var form = document.querySelector('li#payment form.payment');
                     
 
