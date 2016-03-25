@@ -66,12 +66,12 @@ define(
 
                     switch (codRespuesta){
                         case 3002:
-                            _transactionResult = 1;
+                            document.getElementByid('transaction_result').value = 1;
                         break;
                         case 1002:
                         case 1000:
                         default:
-                            _transactionResult = 0;
+                            document.getElementByid('transaction_result').value = 0;
                         break
                     }
                     window._$clipclap.transactionData = {
