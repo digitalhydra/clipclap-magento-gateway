@@ -103,7 +103,7 @@ define(
                     var form = document.querySelector('li#payment form.payments');
                     //form.submit();
                     console.log(form);
-                    self.placeOrder();
+                    //self.placeOrder();
 
                 };
 
@@ -136,9 +136,9 @@ define(
                     this.isPlaceOrderActionAllowed(false);
                     placeOrder = placeOrderAction(this.getData(), false, this.messageContainer);
 
-                    // $.when(placeOrder).fail(function () {
-                    //     self.isPlaceOrderActionAllowed(true);
-                    // }).done(this.afterPlaceOrder.bind(this));
+                    $.when(placeOrder).fail(function () {
+                        self.isPlaceOrderActionAllowed(true);
+                    }).done(this.afterPlaceOrder.bind(this));
                     return true;
                 }
                 return false;
