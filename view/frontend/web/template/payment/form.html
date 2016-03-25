@@ -31,10 +31,8 @@
             <label data-bind="attr: {for: getCode() + '_transaction_result'}" class="label">
                 <span><!-- ko i18n: 'Transaction Result'--><!-- /ko --></span>
             </label>
-
             <div class="control">
-
-                <select name="payment[transaction_result]"
+               <!--  <select name="payment[transaction_result]"
                         class="select"
                         data-bind="
                                   options: getTransactionResults(),
@@ -42,8 +40,8 @@
                                   optionsText: 'transaction_result',
                                   optionsCaption: $t('Transaction Result'),
                                   value: transactionResult">
-                </select>
-                <!-- <input type="hidden" id="transaction_result" name="payment[transaction_result]" data-bind="attr:{'value':transactionResult}"> -->
+                </select> -->
+                <input type="hidden" id="transaction_result" name="payment[transaction_result]" data-bind="attr:{'value':transactionResult}">
             </div>
         </div>
 
@@ -52,14 +50,14 @@
             <div class="primary">
                 <input type="hidden" name="button-binder" data-bind="attr: {'value': getClipCLapButton()}">
                 <button id="botonClipClap" ></button>
-                <button style="display:block;" class="action primary checkout"
+                <<!-- button style="display:block;" class="action primary checkout"
                         type="submit"
                         data-bind="
                         click: placeOrder,
                         attr: {title: $t('Place Order')}
                         ">
                     <span data-bind="i18n: 'Place Order'"></span>
-                </button>
+                </button> -->
             </div>
         </div>
     </div>

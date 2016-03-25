@@ -92,13 +92,15 @@ define(
                     switch (codRespuesta){
                         case 3002:
                             document.getElementById('transaction_result').value = 1;
+                            self.transactionResult = 1;
                             self.placeOrder();
                         break;
                         case 1002:
                         case 1000:
                         default:
-                            var orderHash = d.getTime();
+                            self.transactionResult = 0;
                             document.getElementById('transaction_result').value = 0;
+                            var orderHash = d.getTime();
                             window._$clipclap._Buttons = {
                                 "#botonClipClap":{
                                     'paymentRef': 'Orden '+orderId+'#'+orderHash,
@@ -127,30 +129,30 @@ define(
                 // console.log('getCode');
                 return 'clipclap_gateway';
             },
-            // placeOrder: function (data, event) {
-            //     if (event) {
-            //         event.preventDefault();
-            //     }
-            //     var self = this,
-            //         placeOrder,
-            //         emailValidationResult = customer.isLoggedIn(),
-            //         loginFormSelector = 'li#payment form.payments';
+            placeOrder: function (data, event) {
+                if (event) {
+                    event.preventDefault();
+                }
+                var self = this,
+                    placeOrder,
+                    emailValidationResult = customer.isLoggedIn(),
+                    loginFormSelector = 'li#payment form.payments';
                 
-            //     if (!customer.isLoggedIn()) {
-            //         $(loginFormSelector).validation();
-            //         emailValidationResult = Boolean($(loginFormSelector + ' input[name=username]').valid());
-            //     }
-            //     if (emailValidationResult && this.validate() && additionalValidators.validate()) {
-            //         this.isPlaceOrderActionAllowed(false);
-            //         placeOrder = placeOrderAction(this.getData(), false, this.messageContainer);
+                if (!customer.isLoggedIn()) {
+                    $(loginFormSelector).validation();
+                    emailValidationResult = Boolean($(loginFormSelector + ' input[name=username]').valid());
+                }
+                if (emailValidationResult && this.validate() && additionalValidators.validate()) {
+                    this.isPlaceOrderActionAllowed(false);
+                    placeOrder = placeOrderAction(this.getData(), false, this.messageContainer);
 
-            //         $.when(placeOrder).fail(function () {
-            //             self.isPlaceOrderActionAllowed(true);
-            //         }).done(this.afterPlaceOrder.bind(this));
-            //         return true;
-            //     }
-            //     return false;
-            // },
+                    $.when(placeOrder).fail(function () {
+                        self.isPlaceOrderActionAllowed(true);
+                    }).done(this.afterPlaceOrder.bind(this));
+                    return true;
+                }
+                return false;
+            },
             getData: function() {
                 return {
                     'method': this.item.method,
@@ -168,16 +170,14 @@ define(
                     }
                 });
             },
-
             selectPaymentMethod: function() {
                 selectPaymentMethodAction(this.getData());
                 checkoutData.setSelectedPaymentMethod(this.item.method);
                 return true;
             },
-
-            // afterPlaceOrder: function () {
-            //     window.location.replace(url.build('checkout/onepage/success/'));
-            // },
+            afterPlaceOrder: function () {
+                window.location.replace(url.build('checkout/onepage/success/'));
+            },
         });
     }
 );
