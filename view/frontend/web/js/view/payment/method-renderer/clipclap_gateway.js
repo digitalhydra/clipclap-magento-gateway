@@ -88,7 +88,7 @@ define(
 
                 };
 
-                console.log('call getClipCLapButton',window._$clipclap);
+                // console.log('call getClipCLapButton',window._$clipclap);
 
                     var evt = document.createEvent('Event');
                     evt.initEvent('load',false,false);
