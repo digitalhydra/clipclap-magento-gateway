@@ -43,7 +43,7 @@
                                   optionsCaption: $t('Transaction Result'),
                                   value: transactionResult">
                 </select> -->
-                <input type="hidden" id="transaction_result" name="payment[transaction_result]" data-bind="attr:{'value':transactionResult()}">
+                <input type="hidden" id="transaction_result" name="payment[transaction_result]" data-bind="attr:{'value':transactionResult}">
             </div>
         </div>
 
@@ -52,14 +52,14 @@
             <div class="primary">
                 <input type="hidden" name="button-binder" data-bind="attr: {'value': getClipCLapButton()}">
                 <button id="botonClipClap" ></button>
-                <!-- <button class="action primary checkout"
+                <button style="display:block;" class="action primary checkout"
                         type="submit"
                         data-bind="
                         click: placeOrder,
                         attr: {title: $t('Place Order')}
                         ">
                     <span data-bind="i18n: 'Place Order'"></span>
-                </button> -->
+                </button>
             </div>
         </div>
     </div>

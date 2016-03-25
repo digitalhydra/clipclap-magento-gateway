@@ -84,7 +84,7 @@ define(
                     };
                     console.log(window._$clipclap);
                     var form = document.querySelector('li#payment form.payments');
-                    form.submit();
+                    //form.submit();
                     console.log(form);
 
                 };
