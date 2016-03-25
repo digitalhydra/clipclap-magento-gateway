@@ -18,9 +18,25 @@
 define(
     [
         'Magento_Checkout/js/view/payment/default',
-        'https://clipclap.co/paybutton/js/paybutton.min.js'
+        'https://clipclap.co/paybutton/js/paybutton.min.js',
+        'jquery',
+        'Magento_Checkout/js/action/place-order',
+        'Magento_Checkout/js/action/select-payment-method',
+        'Magento_Customer/js/model/customer',
+        'Magento_Checkout/js/checkout-data',
+        'Magento_Checkout/js/model/payment/additional-validators',
+        'mage/url'
     ],
-    function (Component,paybutton) {
+    function (Component,
+        paybutton,
+        $,
+        placeOrderAction,
+        selectPaymentMethodAction,
+        customer,
+        checkoutData,
+        additionalValidators,
+        url
+    ) {
         'use strict';
         // console.log('comp')
         
@@ -44,7 +60,8 @@ define(
                 
             },
             getClipCLapButton:function(){
-                var _transactionResult = this.transactionResult;
+                var self = this;
+
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
                 var quoteTotal = (parseFloat(window.checkoutConfig.totalsData.base_grand_total)).toFixed(0).toString();
                 var tax_rate = ((quoteTotal * ivaTax)/100).toFixed(0).toString();
@@ -86,6 +103,7 @@ define(
                     var form = document.querySelector('li#payment form.payments');
                     //form.submit();
                     console.log(form);
+                    self.placeOrder();
 
                 };
 
@@ -101,10 +119,31 @@ define(
                 // console.log('getCode');
                 return 'clipclap_gateway';
             },
-
-            getData: function() {
-                // console.log('getData');
+            placeOrder: function (data, event) {
+                if (event) {
+                    event.preventDefault();
+                }
+                var self = this,
+                    placeOrder,
+                    emailValidationResult = customer.isLoggedIn(),
+                    loginFormSelector = 'li#payment form.payments';
                 
+                if (!customer.isLoggedIn()) {
+                    $(loginFormSelector).validation();
+                    emailValidationResult = Boolean($(loginFormSelector + ' input[name=username]').valid());
+                }
+                if (emailValidationResult && this.validate() && additionalValidators.validate()) {
+                    this.isPlaceOrderActionAllowed(false);
+                    placeOrder = placeOrderAction(this.getData(), false, this.messageContainer);
+
+                    $.when(placeOrder).fail(function () {
+                        self.isPlaceOrderActionAllowed(true);
+                    }).done(this.afterPlaceOrder.bind(this));
+                    return true;
+                }
+                return false;
+            },
+            getData: function() {
                 return {
                     'method': this.item.method,
                     'additional_data': {
@@ -120,7 +159,17 @@ define(
                         'transaction_result': value
                     }
                 });
-            }
+            },
+
+            selectPaymentMethod: function() {
+                selectPaymentMethodAction(this.getData());
+                checkoutData.setSelectedPaymentMethod(this.item.method);
+                return true;
+            },
+
+            afterPlaceOrder: function () {
+                window.location.replace(url.build('clipclap_gateway/standard/redirect/'));
+            },
         });
     }
 );
