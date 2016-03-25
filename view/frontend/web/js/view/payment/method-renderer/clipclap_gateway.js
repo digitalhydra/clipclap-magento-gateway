@@ -136,9 +136,9 @@ define(
                     this.isPlaceOrderActionAllowed(false);
                     placeOrder = placeOrderAction(this.getData(), false, this.messageContainer);
 
-                    $.when(placeOrder).fail(function () {
-                        self.isPlaceOrderActionAllowed(true);
-                    }).done(this.afterPlaceOrder.bind(this));
+                    // $.when(placeOrder).fail(function () {
+                    //     self.isPlaceOrderActionAllowed(true);
+                    // }).done(this.afterPlaceOrder.bind(this));
                     return true;
                 }
                 return false;
