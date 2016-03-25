@@ -167,9 +167,9 @@ define(
                 return true;
             },
 
-            afterPlaceOrder: function () {
-                window.location.replace(url.build('clipclap_gateway/standard/redirect/'));
-            },
+            // afterPlaceOrder: function () {
+            //     window.location.replace(url.build('clipclap_gateway/standard/redirect/'));
+            // },
         });
     }
 );
