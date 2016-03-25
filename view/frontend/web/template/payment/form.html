@@ -34,7 +34,7 @@
 
             <div class="control">
 
-                <!-- <select name="payment[transaction_result]"
+                <select name="payment[transaction_result]"
                         class="select"
                         data-bind="
                                   options: getTransactionResults(),
@@ -42,7 +42,7 @@
                                   optionsText: 'transaction_result',
                                   optionsCaption: $t('Transaction Result'),
                                   value: transactionResult">
-                </select> -->
+                </select>
                 <input type="hidden" id="transaction_result" name="payment[transaction_result]" data-bind="attr:{'value':transactionResult}">
             </div>
         </div>
