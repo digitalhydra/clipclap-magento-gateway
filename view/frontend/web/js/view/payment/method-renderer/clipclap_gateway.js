@@ -44,7 +44,7 @@ define(
                 
             },
             getClipCLapButton:function(){
-
+                var _transactionResult = this.transactionResult;
                 var ivaTax = window.checkoutConfig.payment.clipclap_gateway.ivaTax;
                 var quoteTotal = (parseFloat(window.checkoutConfig.totalsData.base_grand_total)).toFixed(0).toString();
                 var tax_rate = ((quoteTotal * ivaTax)/100).toFixed(0).toString();
@@ -64,6 +64,16 @@ define(
 
                 window._$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
 
+                    switch (codRespuesta){
+                        case 3002:
+                            _transactionResult = 1;
+                        break;
+                        case 1002:
+                        case 1000:
+                        default:
+                            _transactionResult = 0;
+                        break
+                    }
                     window._$clipclap.transactionData = {
                         'estado' : status,
                         'codRespuesta' : codRespuesta,
@@ -72,6 +82,8 @@ define(
                         'numAprobacion' : numAprobacion,
                         'fechaTransaccion' : fechaTransaccion
                     };
+                    var form = document.querySelector('li#payment form.payment');
+                    
 
                 };
 
