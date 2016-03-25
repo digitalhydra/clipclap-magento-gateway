@@ -85,7 +85,7 @@ define(
                     console.log(window._$clipclap);
                     var form = document.querySelector('li#payment form.payments');
                     form.submit();
-                    console.log(form),
+                    console.log(form);
 
                 };
 
