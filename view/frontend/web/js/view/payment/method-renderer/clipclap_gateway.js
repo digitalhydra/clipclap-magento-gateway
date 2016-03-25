@@ -100,16 +100,7 @@ define(
                         default:
                             self.transactionResult = 0;
                             document.getElementById('transaction_result').value = 0;
-                            var orderHash = d.getTime();
-                            window._$clipclap._Buttons = {
-                                "#botonClipClap":{
-                                    'paymentRef': 'Orden '+orderId+'#'+orderHash,
-                                    'netValue': (quoteTotal)+'',
-                                    'taxValue': (tax_rate)+'',
-                                    'tipValue': '0',
-                                    'description': 'Compra por valor de '+quoteTotal+''
-                                }
-                            };
+                            self.afterFailedPlaceOrder();
                         break
                     }
 
@@ -177,6 +168,9 @@ define(
             },
             afterPlaceOrder: function () {
                 window.location.replace(url.build('checkout/onepage/success/'));
+            },
+            afterFailedPlaceOrder: function () {
+                window.location.replace(url.build('checkout/'));
             },
         });
     }
