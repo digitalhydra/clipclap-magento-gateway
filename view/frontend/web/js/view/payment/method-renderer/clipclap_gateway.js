@@ -89,6 +89,7 @@ define(
                         'numAprobacion' : numAprobacion,
                         'fechaTransaccion' : fechaTransaccion
                     };
+                    console.log(window._$clipclap.transactionData);
                     switch (codRespuesta){
                         case 3002:
                             document.getElementById('transaction_result').value = 1;
