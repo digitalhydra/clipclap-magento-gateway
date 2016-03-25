@@ -81,16 +81,6 @@ define(
 
                 window._$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
 
-                    switch (codRespuesta){
-                        case 3002:
-                            document.getElementById('transaction_result').value = 1;
-                        break;
-                        case 1002:
-                        case 1000:
-                        default:
-                            document.getElementById('transaction_result').value = 0;
-                        break
-                    }
                     window._$clipclap.transactionData = {
                         'estado' : status,
                         'codRespuesta' : codRespuesta,
@@ -99,10 +89,29 @@ define(
                         'numAprobacion' : numAprobacion,
                         'fechaTransaccion' : fechaTransaccion
                     };
-                    console.log(window._$clipclap);
-                    
-                    console.log(form);
-                    //self.placeOrder();
+                    switch (codRespuesta){
+                        case 3002:
+                            document.getElementById('transaction_result').value = 1;
+                            self.placeOrder();
+                        break;
+                        case 1002:
+                        case 1000:
+                        default:
+                            var orderHash = d.getTime();
+                            document.getElementById('transaction_result').value = 0;
+                            window._$clipclap._Buttons = {
+                                "#botonClipClap":{
+                                    'paymentRef': 'Orden '+orderId+'#'+orderHash,
+                                    'netValue': (quoteTotal)+'',
+                                    'taxValue': (tax_rate)+'',
+                                    'tipValue': '0',
+                                    'description': 'Compra por valor de '+quoteTotal+''
+                                }
+                            };
+                        break
+                    }
+
+                    //
 
                 };
 
