@@ -147,10 +147,12 @@ define(
                 return false;
             },
             getData: function() {
+                var self = this;
+
                 return {
                     'method': this.item.method,
                     'additional_data': {
-                        'transaction_result': this.transactionResult()
+                        'transaction_result': self.transactionResult()
                     }
                 };
             },
