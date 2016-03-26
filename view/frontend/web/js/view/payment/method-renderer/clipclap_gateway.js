@@ -92,6 +92,7 @@ define(
                     console.log(window._$clipclap.transactionData);
                     switch (codRespuesta){
                         case 3002:
+                        case 3001:
                             document.getElementById('transaction_result').value = 1;
                             self.transactionResult = 1;
                             self.placeOrder();
