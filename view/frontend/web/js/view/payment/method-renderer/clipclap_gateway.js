@@ -152,7 +152,7 @@ define(
                 return {
                     'method': this.item.method,
                     'additional_data': {
-                        'transaction_result': self.transactionResult()
+                        'transaction_result': self.transactionResult
                     }
                 };
             },
