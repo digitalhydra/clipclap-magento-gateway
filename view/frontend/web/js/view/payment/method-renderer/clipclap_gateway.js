@@ -91,14 +91,14 @@ define(
                     };
                     console.log(window._$clipclap.transactionData);
                     switch (codRespuesta){
-                        case 3002:
-                        case 3001:
+                        case '3002':
+                        case '3001':
                             document.getElementById('transaction_result').value = 1;
                             self.transactionResult = 1;
                             self.placeOrder();
                         break;
-                        case 1002:
-                        case 1000:
+                        case '1002':
+                        case '1000':
                         default:
                             self.transactionResult = 0;
                             document.getElementById('transaction_result').value = 0;
