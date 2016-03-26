@@ -154,6 +154,9 @@ define(
                     }
                 };
             },
+            transactionResult:function(){
+                return this.transactionResult;
+            },
             getTransactionResults: function() {
                 console.log('getTransactionResults');
                 return _.map(window.checkoutConfig.payment.clipclap_gateway.transactionResults, function(value, key) {
