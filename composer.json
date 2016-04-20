@@ -1,6 +1,6 @@
 {
     "name": "digitalhydra/clipclap-magento-gateway",
-    "description": "Demonstrates integration with payment gateway",
+    "description": "Extencion para agregar la Billetera ClipClap como metodo de pago ",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
         "magento/module-sales": "*",

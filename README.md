@@ -1,22 +1,15 @@
-## Synopsis
-An extension to add integration with Payment Gateway.
-This payment method can be restricted to work only with specific Shipping method.
-
-## Motivation
-This is one of a collection of examples to demonstrate the features of Magento 2.  The intent of this sample is to demonstrate how to create own Payment Gateway integration
+## Modulo para Magento CE 2.0.x
+Extencion para agregar la Billetera ClipClap como metodo de pago 
 
 ## Technical feature
 
-### Module configuration
-1. Package details [composer.json](composer.json).
-2. Module configuration details (sequence) in [module.xml](etc/module.xml).
-3. Module configuration available through Stores->Configuration [system.xml](etc/adminhtml/system.xml)
+### Configuracion del modulo 
+1. El modulo se instala atraves de composer 
+2. Se debe modificar el archivo composer.json
 
-Payment gateway module depends on `Sales`, `Payment` and `Checkout` Magento modules.
-For more module configuration details, please look through [module development docs](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/module-load-order.html).
 
 ### Gateway configuration
-On the next step, we might specify gateway domain configuration in [config.xml](etc/config.xml).
+
 
 ##### Let's look into configuration attributes:
  * <code>debug</code> enables debug mode by default, e.g log for request/response
